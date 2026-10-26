@@ -1,0 +1,20 @@
+Original HPWL             4956.1 u (    2609.7,     2346.4)
+Final HPWL                4391.9 u (    2244.7,     2147.2)
+Delta HPWL                 -11.4 % (     -14.0,       -8.5)
+
+[INFO DPL-0020] Mirrored 16 instances
+[INFO DPL-0021] HPWL before            4391.9 u
+[INFO DPL-0022] HPWL after             4387.3 u
+[INFO DPL-0023] HPWL delta               -0.1 %
+[INFO FLW-0012] Placement violations .
+estimate_parasitics -placement
+Report metrics stage 3, detailed place...
+
+==========================================================================
+detailed place report_design_area
+--------------------------------------------------------------------------
+Design area 3518 um^2 62% utilization.
+write_db ./results/sky130hd/gcd/base/3_5_place_dp.odb
+Elapsed time: 0:00.95[h:]min:sec. CPU time: user 0.83 sys 0.10 (98%). Peak memory: 115824KB.
+Log                        Elapsed/s Peak Memory/MB  sha1sum .odb [0:20)
+3_5_place_dp                       0            113 cc2acc0c8339ee7df9c3

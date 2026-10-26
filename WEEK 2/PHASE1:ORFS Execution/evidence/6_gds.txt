@@ -1,0 +1,1 @@
+-rw-rw-rw- 1 vscode vscode 821K Oct 26 16:40 results/sky130hd/gcd/base/6_final.gds
