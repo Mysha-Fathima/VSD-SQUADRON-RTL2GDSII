@@ -1,0 +1,18 @@
+finish report_tns
+tns max -92.21
+finish report_wns
+wns max -2.19
+finish report_worst_slack
+worst slack max -2.19
+                                  0.53   slack (MET)
+                                 -2.19   slack (VIOLATED)
+                                 -2.19   slack (VIOLATED)
+finish max_slew_check_slack
+finish max_slew_check_slack_limit
+finish max_fanout_check_slack
+finish max_capacitance_check_slack
+finish max_capacitance_check_slack_limit
+          -2.19   slack (VIOLATED)
+           0.53   slack (MET)
+finish critical path slack
+finish slack div critical path delay

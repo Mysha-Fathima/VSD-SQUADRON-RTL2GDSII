@@ -1,0 +1,1 @@
+-rw-rw-rw- 1 codespace codespace 821K Oct 27 16:48 /workspaces/vsd-scl180-orfs/orfs/flow/results/sky130hd/gcd/base/6_final.gds

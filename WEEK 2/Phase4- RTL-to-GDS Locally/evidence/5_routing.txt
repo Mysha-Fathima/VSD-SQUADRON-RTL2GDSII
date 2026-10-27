@@ -1,0 +1,20 @@
+           met2      77
+           met3      10
+           met4       0
+-----------------------
+               2400
+
+
+[INFO DRT-0267] cpu time = 00:00:17, elapsed time = 00:00:15, memory = 675.31 (MB), peak = 698.22 (MB)
+
+[INFO DRT-0180] Post processing.
+Took 28 seconds: detailed_route -output_drc ./reports/sky130hd/gcd/base/5_route_drc.rpt -output_maze ./results/sky130hd/gcd/base/maze.log -droute_end_iter 64 -verbose 1 -drc_report_iter_step 5
+[INFO GRT-0012] Found 0 antenna violations.
+[INFO ANT-0002] Found 0 net violations.
+[INFO ANT-0001] Found 0 pin violations.
+[INFO ANT-0002] Found 0 net violations.
+[INFO ANT-0001] Found 0 pin violations.
+write_db ./results/sky130hd/gcd/base/5_2_route.odb
+Elapsed time: 0:29.32[h:]min:sec. CPU time: user 64.03 sys 0.44 (219%). Peak memory: 714980KB.
+Log                        Elapsed/s Peak Memory/MB  sha1sum .odb [0:20)
+5_2_route                         29            698 6a0de006e10e501f0f21
