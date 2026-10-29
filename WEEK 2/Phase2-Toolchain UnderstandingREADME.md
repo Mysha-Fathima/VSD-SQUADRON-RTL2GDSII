@@ -1,7 +1,41 @@
 # Phase 2: Toolchain Deep Dive and Flow Explanation
  
-All findings below come from reading the repo's `.devcontainer` files and from inspecting my own Sky130 `gcd` run in the Codespace.
+**Goal:** find out which tools make up the ORFS flow, where each one comes from, what it does and in which stage it is used. Everything below comes from reading the repo's `.devcontainer` files and from my own Phase 1 run logs.All findings below come from reading the repo's `.devcontainer` files and from inspecting my own Sky130 `gcd` run in the Codespace.
+---
  
+## 1. Where the tools come from
+ 
+I read three files in `.devcontainer/`:
+ 
+| File | What it does |
+|---|---|
+| `Dockerfile` | Builds the base system: Ubuntu 22.04, `apt` packages, Yosys, KLayout |
+| `install-openroad.sh` | Downloads a prebuilt OpenROAD, copies it to `/opt/openroad` and links it into `/usr/local/bin` |
+| `devcontainer.json` | Tells Codespaces to build the Dockerfile and run `install-openroad.sh` afterwards (`postCreateCommand`) |
+ 
+How to read a Dockerfile line:
+ 
+| Line type | Meaning |
+|---|---|
+| `FROM` | Base operating system image |
+| `RUN apt-get install` | Installed from the package manager |
+| `curl` / `wget` then `tar` | Downloaded as a ready-made archive |
+| `ENV PATH=...` | Makes a tool runnable from any folder |
+ 
+> 📸 **Screenshot:** `ls -la .devcontainer`
+><img width="1090" height="509" alt="image" src="https://github.com/user-attachments/assets/15b3b875-bc73-4185-a312-5aa647b75cf6" />
+
+> 📸 **Screenshot:** Dockerfile contents (`cat .devcontainer/Dockerfile`)
+><img width="1090" height="626" alt="image" src="https://github.com/user-attachments/assets/d49d12cf-4f41-44c3-a275-4d52e49ed38e" />
+
+> 📸 **Screenshot:** `cat .devcontainer/devcontainer.json`
+><img width="1073" height="820" alt="image" src="https://github.com/user-attachments/assets/e7c9baf8-8ffe-4d80-b6f1-ebfe770aa690" />
+
+> 📸 **Screenshot:** `grep` of the install lines in `install-openroad.sh`
+> <img width="1073" height="901" alt="image" src="https://github.com/user-attachments/assets/209216e6-060b-4cab-beb7-04b7cda799f1" />
+
+ 
+--- 
 ## Task 2.1 – Toolchain table
  
 How I found this: I read `.devcontainer/Dockerfile`, `.devcontainer/install-openroad.sh` and `.devcontainer/devcontainer.json`, then confirmed each tool with `which`, `ls -l` and my run logs.
@@ -22,6 +56,28 @@ Other things the Dockerfile installs that are not part of the main flow: Verilat
  
 Base image: `ubuntu:22.04`.
  
+> 📸 **Screenshot:** `which openroad yosys klayout python3 make git` and `openroad -help | head -20`
+><img width="1090" height="503" alt="image" src="https://github.com/user-attachments/assets/114a54fb-4b79-4ddf-8a14-e27f0cf357f8" />
+
+> 📸 **Screenshot:** `ls -l /usr/local/bin/openroad` (the symlink) and the CTS, GRT and merge log snippets that prove where each sub-tool lives
+> <img width="1090" height="519" alt="image" src="https://github.com/user-attachments/assets/44cb5197-b950-4a9b-a385-dcfe56aec487" />
+
+ 
+---
+## 3. The flow at a glance
+ 
+```mermaid
+flowchart LR
+    A["Verilog RTL<br/>gcd.v"] --> B["Synthesis<br/>Yosys"]
+    B --> C["Floorplan<br/>OpenROAD"]
+    C --> D["Placement<br/>OpenROAD"]
+    D --> E["Clock Tree<br/>TritonCTS"]
+    E --> F["Routing<br/>FastRoute + detailed"]
+    F --> G["GDS merge<br/>KLayout"]
+    G --> H["6_final.gds"]
+```
+ 
+---
 ## Task 2.2 – How the flow works
  
 **1. What does ORFS automate?**
@@ -35,7 +91,10 @@ Every stage is written as a rule: an output file, then the files it needs. For e
 **3. Where does synthesis end and physical design begin?**
 
 Synthesis ends at `1_synth`, which is the gate-level netlist and its constraints file. That netlist says which cells are used and how they connect, but not where anything sits on the chip. Physical design begins at `2_1_floorplan`, where the die and core size are set (my run had 40% core utilization) and the cells get a real area to live in. From there the flow decides where cells go (placement), how the clock reaches them (CTS) and how wires connect them (routing).
- 
+> 📸 **Screenshot:** `grep -nE "1_synth|2_1_floorplan|3_5_place_dp|4_1_cts|5_2_route|6_final" Makefile | head -30`
+> <img width="1090" height="514" alt="image" src="https://github.com/user-attachments/assets/9b6812c9-8cb1-49bb-89f5-39392cd17dd8" />
+
+
 **4. Where is timing checked?**
 
 Timing is tracked at several points, not just the end. The constraint comes from `constraint.sdc` (the clock), and OpenSTA, which is built into OpenROAD, evaluates it. The flow also has a timing repair step after placement (`3_6_place_repair_timing` appears in the Makefile) and the CTS and routing stages change the timing again. The final numbers are in `6_report` and `6_finish.rpt`. In my run the final report showed **WNS -2.19 and TNS -92.21**, so the design did not meet timing at the end even though the flow completed.
@@ -52,7 +111,7 @@ It is produced at the end, in `6_1_merge`. The merge log shows KLayout 0.30.9 co
 
 From the elapsed-time table: CTS took 30 s, global routing 61 s and detailed routing 53 s, out of 162 s in total. Synthesis (2 s), floorplan (3 s) and global placement (3 s) were quick. So for a small design like `gcd`, clock tree and routing were most of the runtime. Peak memory was highest in detailed routing, at 635 MB.
  
-## Evidence (screenshots saved in `screenshots/phase2/`)
+## Evidence 
  
 - `ls -la .devcontainer`
 - Dockerfile contents
@@ -63,15 +122,19 @@ From the elapsed-time table: CTS took 30 s, global routing 61 s and detailed rou
 - CTS, GRT and merge log snippets
 - Makefile `grep` showing the stage dependencies and `genElapsedTime`
   
-## Phase 2 completion checklist
-
-- [ ] Both devcontainer files inspected
-- [ ] Major tools mapped to their real installation sources
-- [ ] Tool purposes and stages documented
-- [ ] ORFS automation explained in my own words
-- [ ] Makefile orchestration explained
-- [ ] Synthesis-to-physical-design handoff explained
-- [ ] Timing reports and GDS output location identified
+ 
+## 5. Checklist
+ 
+- [x] Read `Dockerfile`, `install-openroad.sh` and `devcontainer.json`
+- [x] Found the source of every tool (apt, download, or built into OpenROAD)
+- [x] Confirmed with `which`, `ls -l` and run logs
+- [x] Toolchain table completed
+- [x] Five flow questions answered in my own words
+## 6. What I learned
+ 
+- OpenROAD is one binary that contains several tools (TritonCTS, FastRoute, OpenSTA), so there is no separate install for them.
+- The Dockerfile alone does not tell the whole story: `devcontainer.json` shows that OpenROAD is installed *after* the container is built.
+- Always verify a claim with a log line or a command (`which`, `ls -l`, `grep`) before writing it down.
 
 ## Key takeaway
 
