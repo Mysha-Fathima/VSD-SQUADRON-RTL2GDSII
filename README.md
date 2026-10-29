@@ -1,6 +1,8 @@
 # VSD-SQUADRON-RTL2GDSII
 RTL-to-GDSII flow implementation using the VSDsquadron development board. Built during a 6-week intensive SoC design and simulation program with VSD Platform.
 ---
+><img width="566" height="365" alt="image" src="https://github.com/user-attachments/assets/8adeb88e-3d9e-450b-8afd-12119ef6a285" />
+
 **Author:** Mysha Fathima ([@Mysha-Fathima](https://github.com/Mysha-Fathima))
 
 **Course:** VSD Squadron RTL-to-GDSII program, Week 2
