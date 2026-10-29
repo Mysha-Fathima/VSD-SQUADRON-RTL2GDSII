@@ -1,0 +1,3 @@
+[INFO] Updating package lists... ✔
+[INFO] Installing bazel required libraries... ✔
+[INFO] Installing xcb libraries for GUI support... ✔
