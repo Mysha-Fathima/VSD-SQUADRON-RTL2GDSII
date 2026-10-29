@@ -110,9 +110,17 @@ Result: `wns max -2.19`, `tns max -92.21`, and a path reported as `slack (VIOLAT
 ><img width="1090" height="756" alt="image" src="https://github.com/user-attachments/assets/bd525365-806b-48b9-a899-28bfed1564c7" />
 
 > 📸 **Screenshot:** the shared-library error and its fix (`ldd` before and after)
+<<<<<<< HEAD
 
 
 > 📸 **Screenshot:** the failed `sed` command and the corrected one
+=======
+><img width="1090" height="623" alt="image" src="https://github.com/user-attachments/assets/16a97001-f82b-45a8-a088-80db4c8a6429" />
+><img width="1090" height="585" alt="image" src="https://github.com/user-attachments/assets/52aefc01-eee2-4124-9356-693fdee03b07" />
+
+> 📸 **Screenshot:** the failed `sed` command and the corrected one
+> <img width="1090" height="312" alt="image" src="https://github.com/user-attachments/assets/396a439f-c69c-4ae8-8cd6-a9f1a538c980" />
+>>>>>>> 8c9920e1823d6b92ea96f773d80c8a7ecdc790b0
 
  
 ---
