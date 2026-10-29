@@ -23,3 +23,7 @@ RTL-to-GDSII flow implementation using the VSDsquadron development board. Built 
 | [Phase 5](<Phase5- Debugging and Unix Literacy/README.md>) | Debugging and Unix literacy | ✅ |
  
 ---
+## Next: Week 3
+ 
+Week 3 builds on this setup. The Codespace environment, OpenROAD and ORFS are ready to reuse.
+---
