@@ -1,6 +1,6 @@
 # Phase 5: Debugging and Unix Literacy
  
-**Goal:** show that I can work comfortably in a Linux terminal: find files, read logs, search for problems, set variables, inspect a Makefile, and fix errors myself.
+**Goal:** It shows that I can work comfortably in a Linux terminal: find files, read logs, search for problems, set variables, inspect a Makefile, and fix errors myself.
  
 ---
  
@@ -71,10 +71,15 @@ flowchart LR
 | `git mv` | Rename a file or folder and track it |
  
 > 📸 **Screenshot:** `export B=...`, `echo $B`, `grep -i violated ...`, `find . -name "*.gds"`, `ls designs/sky130hd/gcd`
->
+><img width="1090" height="534" alt="image" src="https://github.com/user-attachments/assets/040199ef-548d-4064-b80d-79d9bc2dbf22" />
+><img width="1090" height="534" alt="image" src="https://github.com/user-attachments/assets/f3ab234f-2286-4997-b253-55d6a396a96f" />
+
 > 📸 **Screenshot:** `head -40 Makefile` (Makefile inspection)
->
+><img width="995" height="906" alt="image" src="https://github.com/user-attachments/assets/fbdf51c9-94db-49ea-8e79-582ff7d358b0" />
+
 > 📸 **Screenshot:** `grep -nE "1_synth|2_1_floorplan|4_1_cts|5_2_route|6_final" Makefile`
+><img width="1090" height="261" alt="image" src="https://github.com/user-attachments/assets/d7c1f3dc-91ab-40d0-bc20-ec45675c401c" />
+><img width="1090" height="287" alt="image" src="https://github.com/user-attachments/assets/79701702-f5a0-4865-a1ff-61b798fb7e6c" />
  
 ---
  
@@ -101,10 +106,9 @@ Result: `wns max -2.19`, `tns max -92.21`, and a path reported as `slack (VIOLAT
 | 6 | `python3` showed 3.14.2, not 3.10.12 | The Codespace puts its own Python first in `PATH` | Noted it. `/usr/bin/python3` is the system one | `which` shows which program actually runs |
  
 > 📸 **Screenshot:** the `less: command not found` error
->
-> 📸 **Screenshot:** the shared-library error and its fix (`ldd` before and after)
->
-> 📸 **Screenshot:** the failed `sed` command and the corrected one
+><img width="1090" height="591" alt="image" src="https://github.com/user-attachments/assets/45304f69-1df3-4ac3-a6ba-65a1f2b9e929" />
+><img width="1090" height="756" alt="image" src="https://github.com/user-attachments/assets/bd525365-806b-48b9-a899-28bfed1564c7" />
+
  
 ---
  
