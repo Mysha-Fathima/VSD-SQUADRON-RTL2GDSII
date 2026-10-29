@@ -1,16 +1,7 @@
 # VSD-SQUADRON-RTL2GDSII
 RTL-to-GDSII flow implementation using the VSDsquadron development board. Built during a 6-week intensive SoC design and simulation program with VSD Platform.
 ---
-<<<<<<< HEAD
-**Author:** Mysha Fathima ([@Mysha-Fathima](https://github.com/Mysha-Fathima))
-**Course:** VSD Squadron RTL-to-GDSII program, Week 2
-**Dates:** 26 to 29 October 2026
-**Report (Google Doc):** [ADD LINK HERE]
- 
----
- 
-## WEEK 2 COMPLETED
-=======
+
 ><img width="566" height="365" alt="image" src="https://github.com/user-attachments/assets/8adeb88e-3d9e-450b-8afd-12119ef6a285" />
 
 **Author:** Mysha Fathima ([@Mysha-Fathima](https://github.com/Mysha-Fathima))
@@ -23,9 +14,8 @@ RTL-to-GDSII flow implementation using the VSDsquadron development board. Built 
  
 ---
  
-## WEEK 2 SUCCESSFULL ✅ 
-#Progress
->>>>>>> 8c9920e1823d6b92ea96f773d80c8a7ecdc790b0
+# WEEK 2 SUCCESSFULL ✅ 
+## Progress
  
 | Phase | Topic | Status |
 |---|---|:---:|
@@ -35,12 +25,9 @@ RTL-to-GDSII flow implementation using the VSDsquadron development board. Built 
 | [Phase 4](<Phase4- RTL-to-GDS Locally/README.md>) | RTL-to-GDS re-run locally and comparison | ✅ |
 | [Phase 5](<Phase5- Debugging and Unix Literacy/README.md>) | Debugging and Unix literacy | ✅ |
  
-<<<<<<< HEAD
 ---
-=======
----
+
 ## Next: Week 3
  
 Week 3 builds on this setup. The Codespace environment, OpenROAD and ORFS are ready to reuse.
----
->>>>>>> 8c9920e1823d6b92ea96f773d80c8a7ecdc790b0
+====
