@@ -16,12 +16,11 @@
  
 | Phase | Topic | Status |
 |---|---|:---:|
-| [Phase 1](<PHASE1-ORFS Execution/README.md>) | ORFS execution in the cloud (Codespaces) | ✅ |
-| [Phase 2](<PHASE2-Toolchain Understanding/README.md>) | Toolchain understanding | ✅ |
-| [Phase 3](<Phase3- Local Installation/README.md>) | Local installation (ORFS and official OpenROAD build) | ✅ |
-| [Phase 4](<Phase4- RTL-to-GDS Locally/README.md>) | RTL-to-GDS re-run locally and comparison | ✅ |
-| [Phase 5](<Phase5- Debugging and Unix Literacy/README.md>) | Debugging and Unix literacy | ✅ |
- 
+| [Phase 1](Phase1-cloud-orfs/README.md) | ORFS execution in the cloud (Codespaces) | ✅ |
+| [Phase 2](Phase2-toolchain/README.md) | Toolchain understanding | ✅ |
+| [Phase 3](Phase3-local-install/README.md) | Local installation and official OpenROAD build | ✅ |
+| [Phase 4](Phase4-local-rtl2gds-run/README.md) | RTL-to-GDS re-run locally and comparison | ✅ |
+| [Phase 5](Phase5-unix-debugging/README.md) | Debugging and Unix literacy | ✅ |
 ---
 
 ## Repository and references
@@ -63,11 +62,11 @@ Design: `gcd` on `sky130hd`, driven by a single `make` command in `orfs/flow`.
 
 | Phase | README | What it documents | what it delivered |
 |---|---|---|---|
-| 1 | [Phase 1 — ORFS Cloud Run](phase-1-orfs-cloud/README.md) | Codespaces setup, tool versions, cloud flow and results | forked the ORFS repo, ran the Sky130 `gcd` flow in a Codespace, and collected proof for synthesis, floorplan, placement, CTS, routing, GDS and timing.|
-| 2 | [Phase 2 — Toolchain Understanding](phase-2-toolchain/README.md) | Tool purposes, installation sources and flow architecture | traced where every tool comes from (Dockerfile, install script, built into OpenROAD), built the toolchain table, and explained how the flow is chained by the Makefile. |
-| 3 | [Phase 3 — Local Installation](phase-3-local-installation/README.md) | Local ORFS and official OpenROAD installation | set up a clean Ubuntu 24.04 machine, installed ORFS, Yosys, KLayout and OpenROAD myself, fixed a missing-library problem, and built the official OpenROAD from source with Bazel. |
-| 4 | [Phase 4 — Local RTL-to-GDS](phase-4-local-rtl-to-gds/README.md) | Local execution and cloud/local comparison | repeated the same run locally, compared cloud and local results, and checked reproducibility with per-stage checksums. |
-| 5 | [Phase 5 — Unix & Debugging](phase-5-unix-debugging/README.md) | Commands, log inspection and debugging evidence | practised Linux commands for searching logs and reports, inspected the Makefile, and documented the problems I debugged. |
+| 1 | [Phase 1-cloud-orfs](Phase1-cloud-orfs/README.md) | Codespaces setup, tool versions, cloud flow and results | forked the ORFS repo, ran the Sky130 `gcd` flow in a Codespace, and collected proof for synthesis, floorplan, placement, CTS, routing, GDS and timing.|
+| 2 | [Phase 2-toolchain](Phase2-toolchain/README.md) | Tool purposes, installation sources and flow architecture | traced where every tool comes from (Dockerfile, install script, built into OpenROAD), built the toolchain table, and explained how the flow is chained by the Makefile. |
+| 3 | [Phase 3-local-install](Phase3-local-install/README.md)  | Local ORFS and official OpenROAD installation | set up a clean Ubuntu 24.04 machine, installed ORFS, Yosys, KLayout and OpenROAD myself, fixed a missing-library problem, and built the official OpenROAD from source with Bazel. |
+| 4 | [Phase 4-local-rtl2gds-run](Phase4-local-rtl2gds-run/README.md) | Local execution and cloud/local comparison | repeated the same run locally, compared cloud and local results, and checked reproducibility with per-stage checksums. |
+| 5 | [Phase 5-unix-debugging](Phase5-unix-debugging/README.md) | Commands, log inspection and debugging evidence | practised Linux commands for searching logs and reports, inspected the Makefile, and documented the problems I debugged. |
 ---
 
 ## Linux commands
@@ -137,11 +136,11 @@ These validation commands confirm the exact binaries used during the run. Tool v
 ```text
 WEEK 2/
 ├── README.md                              <- this file
-├── PHASE1-ORFS Execution/                 cloud run evidence
-├── PHASE2-Toolchain Understanding/        toolchain table and flow explanation
-├── Phase3- Local Installation/            install log, build log, versions
-├── Phase4- RTL-to-GDS Locally/            local run evidence and comparison
-└── Phase5- Debugging and Unix Literacy/   commands and debugging log
+├── [Phase 1-cloud-orfs]/                  cloud run evidence
+├── [Phase 2-toolchain]/                   toolchain table and flow explanation
+├── [Phase 3-local-install]/               install log, build log, versions
+├── [Phase 4-local-rtl2gds-run]/           local run evidence and comparison
+└── [Phase 5-unix-debugging]/              commands and debugging log
 ```
  
 ---

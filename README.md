@@ -19,12 +19,12 @@ RTL-to-GDSII flow implementation using the VSDsquadron development board. Built 
  
 | Phase | Topic | Status |
 |---|---|:---:|
-| [Phase 1](<PHASE1-ORFS Execution/README.md>) | ORFS execution in the cloud (Codespaces) | ✅ |
-| [Phase 2](<PHASE2-Toolchain Understanding/README.md>) | Toolchain understanding | ✅ |
-| [Phase 3](<Phase3- Local Installation/README.md>) | Local installation (ORFS and official OpenROAD build) | ✅ |
-| [Phase 4](<Phase4- RTL-to-GDS Locally/README.md>) | RTL-to-GDS re-run locally and comparison | ✅ |
-| [Phase 5](<Phase5- Debugging and Unix Literacy/README.md>) | Debugging and Unix literacy | ✅ |
- 
+| [Phase 1](Phase1-cloud-orfs/README.md) | ORFS execution in the cloud (Codespaces) | ✅ |
+| [Phase 2](Phase2-toolchain/README.md) | Toolchain understanding | ✅ |
+| [Phase 3](Phase3-local-install/README.md) | Local installation and official OpenROAD build | ✅ |
+| [Phase 4](Phase4-local-rtl2gds-run/README.md) | RTL-to-GDS re-run locally and comparison | ✅ |
+| [Phase 5](Phase5-unix-debugging/README.md) | Debugging and Unix literacy | ✅ |
+
 ---
 
 ## Next: Week 3
