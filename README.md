@@ -13,6 +13,8 @@ RTL-to-GDSII flow implementation using the VSDsquadron development board. Built 
 **Tracker Report (Google Doc):** [https://docs.google.com/spreadsheets/d/12ob56XIY2YfxBi9CEd-7Rj--Q5Uz2iUGMpgzSjOV57Q/edit?gid=0#gid=0]
  
 ---
+# Weekly index
+
 | Week | Topic | Link |
 |---|---|---|
 | 1 | OpenLane Physical Design Workshop (10 days) | [Week 1](WEEK%201-openlane-workshop/README.md) |
