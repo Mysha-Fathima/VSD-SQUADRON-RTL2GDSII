@@ -10,13 +10,19 @@ RTL-to-GDSII flow implementation using the VSDsquadron development board. Built 
 
 **Dates:** 26 to 29 October 2026
 
-**Report (Google Doc):** [https://docs.google.com/spreadsheets/d/12ob56XIY2YfxBi9CEd-7Rj--Q5Uz2iUGMpgzSjOV57Q/edit?gid=0#gid=0]
+**Tracker Report (Google Doc):** [https://docs.google.com/spreadsheets/d/12ob56XIY2YfxBi9CEd-7Rj--Q5Uz2iUGMpgzSjOV57Q/edit?gid=0#gid=0]
  
 ---
- 
+| Week | Topic | Link |
+|---|---|---|
+| 1 | OpenLane Physical Design Workshop (10 days) | [Week 1](WEEK%201-openlane-workshop/README.md) |
+| 2 | Toolchain mastery and ORFS (cloud to local) | [Week 2](WEEK%202/README.md) |
+| 3 | *in progress* | |
+---
+
 # WEEK 2 SUCCESSFULL ✅ 
 ## Progress
- 
+
 | Phase | Topic | Status |
 |---|---|:---:|
 | [Phase 1](Phase1-cloud-orfs/README.md) | ORFS execution in the cloud (Codespaces) | ✅ |
