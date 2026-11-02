@@ -1,0 +1,4 @@
+57c57
+<   SOURCE_FILES  := $(FIRMWARE_PATH)/start_caravel_vexriscv.s
+---
+>   SOURCE_FILES  := $(FIRMWARE_PATH)/start_caravel_vexriscv.s $(FIRMWARE_PATH)/isr.c
