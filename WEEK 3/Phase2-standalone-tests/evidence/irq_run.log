@@ -1,0 +1,97 @@
+/usr/bin/riscv64-unknown-elf-gcc -g \
+  -I/workspaces/vsdsquadron-soc/caravel_mgmt_soc_litex/verilog/dv/firmware \
+  -I/workspaces/vsdsquadron-soc/caravel_mgmt_soc_litex/verilog/dv/generated \
+  -I/workspaces/vsdsquadron-soc/caravel_mgmt_soc_litex/verilog/dv/ \
+  -I/workspaces/vsdsquadron-soc/caravel_mgmt_soc_litex/verilog/common \
+  -march=rv32i_zicsr -mabi=ilp32 -D__vexriscv__ \
+  -ffreestanding -nostdlib \
+  -Wl,-Bstatic \
+  -Wl,-T,/workspaces/vsdsquadron-soc/caravel_mgmt_soc_litex/verilog/dv/firmware/sections_vexriscv.lds \
+  -Wl,--strip-debug \
+  -o irq.elf /workspaces/vsdsquadron-soc/caravel_mgmt_soc_litex/verilog/dv/firmware/start_caravel_vexriscv.s /workspaces/vsdsquadron-soc/caravel_mgmt_soc_litex/verilog/dv/firmware/isr.c irq.c
+In file included from irq.c:23:
+/workspaces/vsdsquadron-soc/caravel_mgmt_soc_litex/verilog/dv/firmware/defs.h:273: warning: "reg_debug_2" redefined
+  273 | #define reg_debug_2 (*(volatile unsigned int*)(USER_SPACE_ADDR + USER_SPACE_SIZE))
+      | 
+/workspaces/vsdsquadron-soc/caravel_mgmt_soc_litex/verilog/dv/firmware/defs.h:147: note: this is the location of the previous definition
+  147 | #define reg_debug_2 (*(volatile uint32_t*)0x300FFFFC)
+      | 
+/workspaces/vsdsquadron-soc/caravel_mgmt_soc_litex/verilog/dv/firmware/defs.h:274: warning: "reg_debug_1" redefined
+  274 | #define reg_debug_1 (*(volatile unsigned int*)(USER_SPACE_ADDR + USER_SPACE_SIZE - 4))
+      | 
+/workspaces/vsdsquadron-soc/caravel_mgmt_soc_litex/verilog/dv/firmware/defs.h:146: note: this is the location of the previous definition
+  146 | #define reg_debug_1 (*(volatile uint32_t*)0x300FFFF8)
+      | 
+/usr/bin/riscv64-unknown-elf-objcopy -O verilog irq.elf irq.hex
+#sed -ie 's/@10/@00/g' irq.hex
+sed -i 's/^@1000/@0000/' irq.hex
+iverilog -Ttyp -DFUNCTIONAL -DSIM -DUNIT_DELAY=#1 \
+  -y /home/vsduser/caravel/verilog/rtl \
+  -I /home/vsduser/caravel/verilog/rtl \
+  -f /workspaces/vsdsquadron-soc/caravel_mgmt_soc_litex/verilog/includes/includes.rtl.standalone \
+  -o irq.vvp /workspaces/vsdsquadron-soc/caravel/verilog/rtl/__user_project_wrapper.v irq_tb.v
+vvp irq.vvp
+Reading irq.hex
+irq.hex loaded into memory
+Memory 5 bytes = 0x93 0x00 0x00 0x00 0x93
+FST info: dumpfile irq.vcd opened for output.
+GPIO state = 0000 (0000)
++1000 cycles
++1000 cycles
++1000 cycles
++1000 cycles
++1000 cycles
++1000 cycles
++1000 cycles
++1000 cycles
++1000 cycles
+Monitor: Test IRQ (RTL) Started
+GPIO state = 0000 (0101)
++1000 cycles
++1000 cycles
++1000 cycles
++1000 cycles
++1000 cycles
++1000 cycles
++1000 cycles
++1000 cycles
++1000 cycles
++1000 cycles
++1000 cycles
++1000 cycles
++1000 cycles
++1000 cycles
++1000 cycles
++1000 cycles
++1000 cycles
++1000 cycles
++1000 cycles
++1000 cycles
++1000 cycles
++1000 cycles
++1000 cycles
++1000 cycles
++1000 cycles
++1000 cycles
++1000 cycles
++1000 cycles
++1000 cycles
++1000 cycles
++1000 cycles
++1000 cycles
++1000 cycles
++1000 cycles
++1000 cycles
++1000 cycles
++1000 cycles
++1000 cycles
++1000 cycles
++1000 cycles
++1000 cycles
+[1;31m
+Monitor: Timeout, Test IRQ (RTL) Failed
+[0m
+irq_tb.v:63: $finish called at 1249987500 (1ps)
+mv irq.vcd RTL-irq.vcd
+/usr/bin/riscv64-unknown-elf-objdump -d -S irq.elf > irq.lst
+rm irq.vvp irq.elf
