@@ -66,7 +66,10 @@ It sees which files are missing and builds them in order. A file that already ex
 
 **📸 Screenshot 1.1 — the `spi_master` log with these lines visible**
 
-*(paste screenshot here)*
+<img width="1090" height="661" alt="image" src="https://github.com/user-attachments/assets/138ee5d0-bc34-453e-a2ae-c9db72e2d5f2" />
+
+<img width="1090" height="572" alt="image" src="https://github.com/user-attachments/assets/a0fd1d39-307f-4926-90e9-6c2946c7bcbf" />
+
 
 <br><br><br>
 
