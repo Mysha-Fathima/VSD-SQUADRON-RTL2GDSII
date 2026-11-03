@@ -79,7 +79,9 @@ Scripts used: [`week3_env.sh`, `run_test.sh`, `run_caravel.sh`](../Phase5-docume
 
 **📸 Screenshot 2.1 — PDK installed (`ciel enable` output and the library folder listing)**
 
-*(paste screenshot here)*
+<img width="1090" height="470" alt="image" src="https://github.com/user-attachments/assets/d148b16f-4c92-4cf1-8ab2-6bad5509520d" />
+
+<img width="1090" height="338" alt="image" src="https://github.com/user-attachments/assets/6bf7a8fc-c880-48a5-be25-548e07256907" />
 
 <br><br><br>
 
@@ -109,7 +111,8 @@ pie showData
 
 **📸 Screenshot 3.1 — last verdict line of every log**
 
-*(paste screenshot here)*
+<img width="1090" height="535" alt="image" src="https://github.com/user-attachments/assets/74322538-28c4-4bf5-b5b0-5bb662e9c753" />
+
 
 <br><br><br>
 
@@ -130,7 +133,9 @@ The course's own `run.sh` runs `SIM=RTL make` and then `grep Monitor` on the log
 
 **📸 Screenshot 4.1 — Makefile include and `iverilog` lines**
 
-*(paste screenshot here)*
+<img width="1090" height="585" alt="image" src="https://github.com/user-attachments/assets/33ce0f67-65f1-45d9-b9c5-dd0d81614206" />
+
+<img width="1090" height="579" alt="image" src="https://github.com/user-attachments/assets/2ba5c699-6aee-466f-bb3c-100be5444d2c" />
 
 <br><br><br>
 
@@ -159,7 +164,8 @@ The course's own `run.sh` runs `SIM=RTL make` and then `grep Monitor` on the log
 
 **📸 Screenshot 6.1 — end of the `sysctrl` and `pll` logs**
 
-*(paste screenshot here)*
+<img width="1090" height="465" alt="image" src="https://github.com/user-attachments/assets/4e2ec03e-2602-4556-8e5b-baa978814f78" />
+
 
 <br><br><br>
 
