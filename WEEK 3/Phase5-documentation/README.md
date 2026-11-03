@@ -118,11 +118,11 @@ All scripts are in [`scripts/`](scripts/).
 
 | Test | Screenshot |
 |---|---|
-| spi_master (Phase 1) | *(paste screenshot here)* |
-| mem | *(paste screenshot here)* |
-| gpio_mgmt | *(paste screenshot here)* |
-| uart | *(paste screenshot here)* |
-| Caravel run summary | *(paste screenshot here)* |
+| spi_master (Phase 1) | <img width="1090" height="572" alt="image" src="https://github.com/user-attachments/assets/e7cca8a3-a5c1-4378-bb00-b75f5dd58097" /> |
+| mem | <img width="1090" height="561" alt="image" src="https://github.com/user-attachments/assets/ebf092f1-2528-4406-b752-121a61aebe8b" /> |
+| gpio_mgmt | <img width="1090" height="375" alt="image" src="https://github.com/user-attachments/assets/f4221376-ddb8-4907-a2e1-223157719c2c" /> |
+| uart |<img width="1090" height="465" alt="image" src="https://github.com/user-attachments/assets/1522c766-a9cf-4567-91fb-8cc318d47006" /> |
+| Caravel run summary | <img width="1090" height="328" alt="image" src="https://github.com/user-attachments/assets/05677aa3-d824-4763-b9cb-e409bb1810bc" /> |
 
 <br><br>
 
