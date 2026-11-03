@@ -10,11 +10,12 @@
 <p align="center">
   <b>Physical Design Fundamentals • Open-Source EDA • RTL Workflows • Verification</b>
 </p>
-RTL-to-GDSII flow implementation using the VSDsquadron development board. Built during a 6-week intensive SoC design and simulation program with VSD Platform.
-**Tracker Report (Google Doc):** [https://docs.google.com/spreadsheets/d/12ob56XIY2YfxBi9CEd-7Rj--Q5Uz2iUGMpgzSjOV57Q/edit?gid=0#gid=0]
+
 ---
-><img width="566" height="365" alt="image" src="https://github.com/user-attachments/assets/8adeb88e-3d9e-450b-8afd-12119ef6a285" />
----
+
+<p align="center">
+   <b><img width="566" height="365" alt="image" src="https://github.com/user-attachments/assets/8adeb88e-3d9e-450b-8afd-12119ef6a285" /></b>
+</p>
 
 ## 📌 About This Repository
 
