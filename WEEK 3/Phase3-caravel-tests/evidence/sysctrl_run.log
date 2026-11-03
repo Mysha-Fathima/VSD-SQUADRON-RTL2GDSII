@@ -1,0 +1,253 @@
+/usr/bin/riscv64-unknown-elf-gcc -g \
+  -I/workspaces/vsdsquadron-soc/caravel_mgmt_soc_litex/verilog/dv/firmware \
+  -I/workspaces/vsdsquadron-soc/caravel_mgmt_soc_litex/verilog/dv/generated \
+  -I/workspaces/vsdsquadron-soc/caravel_mgmt_soc_litex/verilog/dv/ \
+  -I/workspaces/vsdsquadron-soc/caravel_mgmt_soc_litex/verilog/common \
+  -march=rv32i_zicsr -mabi=ilp32 -D__vexriscv__ \
+  -ffreestanding -nostdlib \
+  -Wl,-Bstatic \
+  -Wl,-T,/workspaces/vsdsquadron-soc/caravel_mgmt_soc_litex/verilog/dv/firmware/sections_vexriscv.lds \
+  -Wl,--strip-debug \
+  -o sysctrl.elf /workspaces/vsdsquadron-soc/caravel_mgmt_soc_litex/verilog/dv/firmware/start_caravel_vexriscv.s sysctrl.c
+In file included from sysctrl.c:1:
+/workspaces/vsdsquadron-soc/caravel_mgmt_soc_litex/verilog/dv/firmware/defs.h:273: warning: "reg_debug_2" redefined
+  273 | #define reg_debug_2 (*(volatile unsigned int*)(USER_SPACE_ADDR + USER_SPACE_SIZE))
+      | 
+/workspaces/vsdsquadron-soc/caravel_mgmt_soc_litex/verilog/dv/firmware/defs.h:147: note: this is the location of the previous definition
+  147 | #define reg_debug_2 (*(volatile uint32_t*)0x300FFFFC)
+      | 
+/workspaces/vsdsquadron-soc/caravel_mgmt_soc_litex/verilog/dv/firmware/defs.h:274: warning: "reg_debug_1" redefined
+  274 | #define reg_debug_1 (*(volatile unsigned int*)(USER_SPACE_ADDR + USER_SPACE_SIZE - 4))
+      | 
+/workspaces/vsdsquadron-soc/caravel_mgmt_soc_litex/verilog/dv/firmware/defs.h:146: note: this is the location of the previous definition
+  146 | #define reg_debug_1 (*(volatile uint32_t*)0x300FFFF8)
+      | 
+/usr/bin/riscv64-unknown-elf-objcopy -O verilog sysctrl.elf sysctrl.hex
+#sed -ie 's/@10/@00/g' sysctrl.hex
+sed -i 's/^@1000/@0000/' sysctrl.hex
+iverilog -Ttyp -DFUNCTIONAL -DSIM -DUSE_POWER_PINS -DUNIT_DELAY=#1 \
+  -y /home/vsduser/caravel/verilog/rtl \
+  -I /home/vsduser/caravel/verilog/rtl \
+  -f /workspaces/vsdsquadron-soc/caravel_mgmt_soc_litex/verilog/includes/includes.rtl.caravel \
+  -o sysctrl.vvp /workspaces/vsdsquadron-soc/caravel/verilog/rtl/__user_project_wrapper.v sysctrl_tb.v
+/workspaces/vsdsquadron-soc/caravel/verilog/rtl/caravel.v:236: warning: input port clock is coerced to inout.
+vvp sysctrl.vvp
+Reading sysctrl.hex
+sysctrl.hex loaded into memory
+Memory 5 bytes = 0x93 0x00 0x00 0x00 0x93
+FST info: dumpfile sysctrl.vcd opened for output.
+GPIO state = zzzzzzzzzzzzzzzz 
++1000 cycles
++1000 cycles
++1000 cycles
++1000 cycles
++1000 cycles
++1000 cycles
++1000 cycles
++1000 cycles
++1000 cycles
++1000 cycles
++1000 cycles
++1000 cycles
++1000 cycles
++1000 cycles
++1000 cycles
++1000 cycles
++1000 cycles
++1000 cycles
++1000 cycles
++1000 cycles
++1000 cycles
++1000 cycles
+GPIO state = 0000000000000000 
++1000 cycles
+Monitor: Test 0 Sysctrl (RTL) Started
+GPIO state = 1010000001000000 
++1000 cycles
++1000 cycles
++1000 cycles
++1000 cycles
++1000 cycles
++1000 cycles
++1000 cycles
++1000 cycles
++1000 cycles
++1000 cycles
++1000 cycles
++1000 cycles
++1000 cycles
++1000 cycles
++1000 cycles
++1000 cycles
++1000 cycles
++1000 cycles
++1000 cycles
++1000 cycles
++1000 cycles
++1000 cycles
++1000 cycles
++1000 cycles
++1000 cycles
++1000 cycles
++1000 cycles
++1000 cycles
++1000 cycles
++1000 cycles
++1000 cycles
++1000 cycles
++1000 cycles
++1000 cycles
++1000 cycles
++1000 cycles
++1000 cycles
++1000 cycles
++1000 cycles
++1000 cycles
+Monitor: ucount =           0 ccount =           0
+GPIO state = 1010000001000001 
+Monitor: Test 1 Sysctrl (RTL) Started
+GPIO state = 1010000001000010 
++1000 cycles
++1000 cycles
++1000 cycles
++1000 cycles
++1000 cycles
++1000 cycles
++1000 cycles
++1000 cycles
++1000 cycles
++1000 cycles
++1000 cycles
++1000 cycles
++1000 cycles
++1000 cycles
++1000 cycles
++1000 cycles
++1000 cycles
++1000 cycles
++1000 cycles
++1000 cycles
++1000 cycles
++1000 cycles
++1000 cycles
++1000 cycles
++1000 cycles
++1000 cycles
++1000 cycles
++1000 cycles
++1000 cycles
++1000 cycles
++1000 cycles
++1000 cycles
++1000 cycles
++1000 cycles
++1000 cycles
++1000 cycles
++1000 cycles
++1000 cycles
++1000 cycles
++1000 cycles
++1000 cycles
++1000 cycles
++1000 cycles
++1000 cycles
++1000 cycles
++1000 cycles
++1000 cycles
++1000 cycles
++1000 cycles
++1000 cycles
++1000 cycles
++1000 cycles
++1000 cycles
++1000 cycles
++1000 cycles
++1000 cycles
++1000 cycles
++1000 cycles
++1000 cycles
++1000 cycles
++1000 cycles
++1000 cycles
++1000 cycles
++1000 cycles
++1000 cycles
++1000 cycles
++1000 cycles
++1000 cycles
++1000 cycles
++1000 cycles
++1000 cycles
++1000 cycles
++1000 cycles
++1000 cycles
++1000 cycles
++1000 cycles
++1000 cycles
++1000 cycles
++1000 cycles
++1000 cycles
++1000 cycles
++1000 cycles
++1000 cycles
++1000 cycles
++1000 cycles
++1000 cycles
++1000 cycles
++1000 cycles
++1000 cycles
++1000 cycles
++1000 cycles
++1000 cycles
++1000 cycles
++1000 cycles
++1000 cycles
++1000 cycles
++1000 cycles
++1000 cycles
++1000 cycles
++1000 cycles
++1000 cycles
++1000 cycles
++1000 cycles
++1000 cycles
++1000 cycles
++1000 cycles
++1000 cycles
++1000 cycles
++1000 cycles
++1000 cycles
++1000 cycles
++1000 cycles
++1000 cycles
++1000 cycles
++1000 cycles
++1000 cycles
++1000 cycles
++1000 cycles
++1000 cycles
++1000 cycles
++1000 cycles
++1000 cycles
++1000 cycles
++1000 cycles
++1000 cycles
++1000 cycles
++1000 cycles
++1000 cycles
++1000 cycles
++1000 cycles
++1000 cycles
++1000 cycles
++1000 cycles
++1000 cycles
++1000 cycles
++1000 cycles
++1000 cycles
+[1;31m
+Monitor: Timeout, Test Sysctrl (RTL) Failed
+[0m
+sysctrl_tb.v:72: $finish called at 3999990000 (1ps)
+mv sysctrl.vcd RTL-sysctrl.vcd
+/usr/bin/riscv64-unknown-elf-objdump -d -S sysctrl.elf > sysctrl.lst
+rm sysctrl.vvp sysctrl.elf

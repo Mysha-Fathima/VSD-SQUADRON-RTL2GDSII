@@ -1,0 +1,90 @@
+/usr/bin/riscv64-unknown-elf-gcc -g \
+  -I/workspaces/vsdsquadron-soc/caravel_mgmt_soc_litex/verilog/dv/firmware \
+  -I/workspaces/vsdsquadron-soc/caravel_mgmt_soc_litex/verilog/dv/generated \
+  -I/workspaces/vsdsquadron-soc/caravel_mgmt_soc_litex/verilog/dv/ \
+  -I/workspaces/vsdsquadron-soc/caravel_mgmt_soc_litex/verilog/common \
+  -march=rv32i_zicsr -mabi=ilp32 -D__vexriscv__ \
+  -ffreestanding -nostdlib \
+  -Wl,-Bstatic \
+  -Wl,-T,/workspaces/vsdsquadron-soc/caravel_mgmt_soc_litex/verilog/dv/firmware/sections_vexriscv.lds \
+  -Wl,--strip-debug \
+  -o gpio_mgmt.elf /workspaces/vsdsquadron-soc/caravel_mgmt_soc_litex/verilog/dv/firmware/start_caravel_vexriscv.s gpio_mgmt.c
+In file included from gpio_mgmt.c:18:
+/workspaces/vsdsquadron-soc/caravel_mgmt_soc_litex/verilog/dv/firmware/defs.h:273: warning: "reg_debug_2" redefined
+  273 | #define reg_debug_2 (*(volatile unsigned int*)(USER_SPACE_ADDR + USER_SPACE_SIZE))
+      | 
+/workspaces/vsdsquadron-soc/caravel_mgmt_soc_litex/verilog/dv/firmware/defs.h:147: note: this is the location of the previous definition
+  147 | #define reg_debug_2 (*(volatile uint32_t*)0x300FFFFC)
+      | 
+/workspaces/vsdsquadron-soc/caravel_mgmt_soc_litex/verilog/dv/firmware/defs.h:274: warning: "reg_debug_1" redefined
+  274 | #define reg_debug_1 (*(volatile unsigned int*)(USER_SPACE_ADDR + USER_SPACE_SIZE - 4))
+      | 
+/workspaces/vsdsquadron-soc/caravel_mgmt_soc_litex/verilog/dv/firmware/defs.h:146: note: this is the location of the previous definition
+  146 | #define reg_debug_1 (*(volatile uint32_t*)0x300FFFF8)
+      | 
+/usr/bin/riscv64-unknown-elf-objcopy -O verilog gpio_mgmt.elf gpio_mgmt.hex
+#sed -ie 's/@10/@00/g' gpio_mgmt.hex
+sed -i 's/^@10000000/@00000000/' gpio_mgmt.hex
+iverilog -Ttyp -DFUNCTIONAL -DSIM -DUSE_POWER_PINS -DUNIT_DELAY=#1 \
+  -y /home/vsduser/caravel/verilog/rtl \
+  -I /home/vsduser/caravel/verilog/rtl \
+  -f /workspaces/vsdsquadron-soc/caravel_mgmt_soc_litex/verilog/includes/includes.rtl.caravel \
+  -o gpio_mgmt.vvp /workspaces/vsdsquadron-soc/caravel/verilog/rtl/__user_project_wrapper.v gpio_mgmt_tb.v
+/workspaces/vsdsquadron-soc/caravel/verilog/rtl/caravel.v:236: warning: input port clock is coerced to inout.
+vvp gpio_mgmt.vvp
+Reading gpio_mgmt.hex
+gpio_mgmt.hex loaded into memory
+Memory 5 bytes = 0x93 0x00 0x00 0x00 0x93
+FST info: dumpfile gpio_mgmt.vcd opened for output.
+Mgmt GPIO state = zzzzzzzzxxxxxxxx (  z -   x)
++1000 cycles
++1000 cycles
++1000 cycles
++1000 cycles
++1000 cycles
++1000 cycles
++1000 cycles
++1000 cycles
++1000 cycles
++1000 cycles
++1000 cycles
++1000 cycles
+Blink.
++1000 cycles
++1000 cycles
++1000 cycles
++1000 cycles
++1000 cycles
+Blink.
++1000 cycles
++1000 cycles
++1000 cycles
+Blink.
++1000 cycles
++1000 cycles
+Blink.
++1000 cycles
++1000 cycles
++1000 cycles
+Blink.
++1000 cycles
++1000 cycles
+Blink.
++1000 cycles
++1000 cycles
++1000 cycles
+Blink.
++1000 cycles
++1000 cycles
+Blink.
++1000 cycles
++1000 cycles
++1000 cycles
+Blink.
++1000 cycles
++1000 cycles
+Monitor: Test Mgmt GPIO (RTL) Passed
+gpio_mgmt_tb.v:204: $finish called at 939187500 (1ps)
+mv gpio_mgmt.vcd RTL-gpio_mgmt.vcd
+/usr/bin/riscv64-unknown-elf-objdump -d -S gpio_mgmt.elf > gpio_mgmt.lst
+rm gpio_mgmt.vvp gpio_mgmt.elf

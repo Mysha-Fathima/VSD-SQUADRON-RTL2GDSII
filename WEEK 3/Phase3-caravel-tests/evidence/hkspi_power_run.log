@@ -1,0 +1,63 @@
+/usr/bin/riscv64-unknown-elf-gcc -g \
+  -I/workspaces/vsdsquadron-soc/caravel_mgmt_soc_litex/verilog/dv/firmware \
+  -I/workspaces/vsdsquadron-soc/caravel_mgmt_soc_litex/verilog/dv/generated \
+  -I/workspaces/vsdsquadron-soc/caravel_mgmt_soc_litex/verilog/dv/ \
+  -I/workspaces/vsdsquadron-soc/caravel_mgmt_soc_litex/verilog/common \
+  -march=rv32i_zicsr -mabi=ilp32 -D__vexriscv__ \
+  -ffreestanding -nostdlib \
+  -Wl,-Bstatic \
+  -Wl,-T,/workspaces/vsdsquadron-soc/caravel_mgmt_soc_litex/verilog/dv/firmware/sections_vexriscv.lds \
+  -Wl,--strip-debug \
+  -o hkspi_power.elf /workspaces/vsdsquadron-soc/caravel_mgmt_soc_litex/verilog/dv/firmware/start_caravel_vexriscv.s hkspi_power.c
+In file included from hkspi_power.c:18:
+/workspaces/vsdsquadron-soc/caravel_mgmt_soc_litex/verilog/dv/firmware/defs.h:273: warning: "reg_debug_2" redefined
+  273 | #define reg_debug_2 (*(volatile unsigned int*)(USER_SPACE_ADDR + USER_SPACE_SIZE))
+      | 
+/workspaces/vsdsquadron-soc/caravel_mgmt_soc_litex/verilog/dv/firmware/defs.h:147: note: this is the location of the previous definition
+  147 | #define reg_debug_2 (*(volatile uint32_t*)0x300FFFFC)
+      | 
+/workspaces/vsdsquadron-soc/caravel_mgmt_soc_litex/verilog/dv/firmware/defs.h:274: warning: "reg_debug_1" redefined
+  274 | #define reg_debug_1 (*(volatile unsigned int*)(USER_SPACE_ADDR + USER_SPACE_SIZE - 4))
+      | 
+/workspaces/vsdsquadron-soc/caravel_mgmt_soc_litex/verilog/dv/firmware/defs.h:146: note: this is the location of the previous definition
+  146 | #define reg_debug_1 (*(volatile uint32_t*)0x300FFFF8)
+      | 
+/usr/bin/riscv64-unknown-elf-objcopy -O verilog hkspi_power.elf hkspi_power.hex
+#sed -ie 's/@10/@00/g' hkspi_power.hex
+sed -i 's/^@10000000/@00000000/' hkspi_power.hex
+iverilog -Ttyp -DFUNCTIONAL -DSIM -DUSE_POWER_PINS -DUNIT_DELAY=#1 \
+  -y /home/vsduser/caravel/verilog/rtl \
+  -I /home/vsduser/caravel/verilog/rtl \
+  -f /workspaces/vsdsquadron-soc/caravel_mgmt_soc_litex/verilog/includes/includes.rtl.caravel \
+  -o hkspi_power.vvp /workspaces/vsdsquadron-soc/caravel/verilog/rtl/__user_project_wrapper.v hkspi_power_tb.v
+/workspaces/vsdsquadron-soc/caravel/verilog/rtl/caravel.v:236: warning: input port clock is coerced to inout.
+vvp hkspi_power.vvp
+Reading hkspi_power.hex
+hkspi_power.hex loaded into memory
+Memory 5 bytes = 0x93 0x00 0x00 0x00 0x93
+FST info: dumpfile hkspi_power.vcd opened for output.
+Read data = 0x11 (should be 0x11)
+Read register 0 = 0x00 (should be 0x00)
+Read register 1 = 0x04 (should be 0x04)
+Read register 2 = 0x56 (should be 0x56)
+Read register 3 = 0x11 (should be 0x11)
+Read register 4 = 0x00 (should be 0x00)
+Read register 5 = 0x00 (should be 0x00)
+Read register 6 = 0x00 (should be 0x00)
+Read register 7 = 0x00 (should be 0x00)
+Read register 8 = 0x02 (should be 0x02)
+Read register 9 = 0x01 (should be 0x01)
+Read register 10 = 0x00 (should be 0x00)
+Read register 11 = 0x00 (should be 0x00)
+Read register 12 = 0x00 (should be 0x00)
+Read register 13 = 0xff (should be 0xff)
+Read register 14 = 0xef (should be 0xef)
+Read register 15 = 0xff (should be 0xff)
+Read register 16 = 0x03 (should be 0x03)
+Read register 17 = 0x12 (should be 0x12)
+Read register 18 = 0x04 (should be 0x04)
+Monitor: Test HK SPI (RTL) Passed
+hkspi_power_tb.v:362: $finish called at 61410000 (1ps)
+mv hkspi_power.vcd RTL-hkspi_power.vcd
+/usr/bin/riscv64-unknown-elf-objdump -d -S hkspi_power.elf > hkspi_power.lst
+rm hkspi_power.vvp hkspi_power.elf

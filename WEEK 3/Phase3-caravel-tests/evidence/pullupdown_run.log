@@ -1,0 +1,806 @@
+/usr/bin/riscv64-unknown-elf-gcc -g \
+  -I/workspaces/vsdsquadron-soc/caravel_mgmt_soc_litex/verilog/dv/firmware \
+  -I/workspaces/vsdsquadron-soc/caravel_mgmt_soc_litex/verilog/dv/generated \
+  -I/workspaces/vsdsquadron-soc/caravel_mgmt_soc_litex/verilog/dv/ \
+  -I/workspaces/vsdsquadron-soc/caravel_mgmt_soc_litex/verilog/common \
+  -march=rv32i_zicsr -mabi=ilp32 -D__vexriscv__ \
+  -ffreestanding -nostdlib \
+  -Wl,-Bstatic \
+  -Wl,-T,/workspaces/vsdsquadron-soc/caravel_mgmt_soc_litex/verilog/dv/firmware/sections_vexriscv.lds \
+  -Wl,--strip-debug \
+  -o pullupdown.elf /workspaces/vsdsquadron-soc/caravel_mgmt_soc_litex/verilog/dv/firmware/start_caravel_vexriscv.s pullupdown.c
+In file included from pullupdown.c:18:
+/workspaces/vsdsquadron-soc/caravel_mgmt_soc_litex/verilog/dv/firmware/defs.h:273: warning: "reg_debug_2" redefined
+  273 | #define reg_debug_2 (*(volatile unsigned int*)(USER_SPACE_ADDR + USER_SPACE_SIZE))
+      | 
+/workspaces/vsdsquadron-soc/caravel_mgmt_soc_litex/verilog/dv/firmware/defs.h:147: note: this is the location of the previous definition
+  147 | #define reg_debug_2 (*(volatile uint32_t*)0x300FFFFC)
+      | 
+/workspaces/vsdsquadron-soc/caravel_mgmt_soc_litex/verilog/dv/firmware/defs.h:274: warning: "reg_debug_1" redefined
+  274 | #define reg_debug_1 (*(volatile unsigned int*)(USER_SPACE_ADDR + USER_SPACE_SIZE - 4))
+      | 
+/workspaces/vsdsquadron-soc/caravel_mgmt_soc_litex/verilog/dv/firmware/defs.h:146: note: this is the location of the previous definition
+  146 | #define reg_debug_1 (*(volatile uint32_t*)0x300FFFF8)
+      | 
+/usr/bin/riscv64-unknown-elf-objcopy -O verilog pullupdown.elf pullupdown.hex
+#sed -ie 's/@10/@00/g' pullupdown.hex
+sed -i 's/^@1000/@0000/' pullupdown.hex
+iverilog -Ttyp -DFUNCTIONAL -DSIM -DUSE_POWER_PINS -DUNIT_DELAY=#1 \
+  -y /home/vsduser/caravel/verilog/rtl \
+  -I /home/vsduser/caravel/verilog/rtl \
+  -f /workspaces/vsdsquadron-soc/caravel_mgmt_soc_litex/verilog/includes/includes.rtl.caravel \
+  -o pullupdown.vvp /workspaces/vsdsquadron-soc/caravel/verilog/rtl/__user_project_wrapper.v pullupdown_tb.v
+/workspaces/vsdsquadron-soc/caravel/verilog/rtl/caravel.v:236: warning: input port clock is coerced to inout.
+vvp pullupdown.vvp
+Reading pullupdown.hex
+pullupdown.hex loaded into memory
+Memory 5 bytes = 0x93 0x00 0x00 0x00 0x93
+FST info: dumpfile pullupdown.vcd opened for output.
+Mgmt GPIO state = zzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzz ( z -  z)
+Mgmt GPIO state = zzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzz1zzz ( z -  Z)
++1000 cycles
++1000 cycles
++1000 cycles
++1000 cycles
++1000 cycles
++1000 cycles
++1000 cycles
++1000 cycles
++1000 cycles
++1000 cycles
++1000 cycles
++1000 cycles
++1000 cycles
++1000 cycles
++1000 cycles
++1000 cycles
++1000 cycles
++1000 cycles
++1000 cycles
++1000 cycles
++1000 cycles
++1000 cycles
++1000 cycles
++1000 cycles
++1000 cycles
++1000 cycles
++1000 cycles
++1000 cycles
++1000 cycles
+Mgmt GPIO state = zzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzz1z0z ( z -  Z)
++1000 cycles
+Mgmt GPIO state = zzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzz1z00 ( z -  Z)
++1000 cycles
+Mgmt GPIO state = 000000zzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzz ( 0 -  z)
+Mgmt GPIO state = 100000zzzzzzzzzzzzzzzzzzzzzzzzzzzz0zzz (32 -  Z)
+Monitor: CSB default pull-up state check passed
+Mgmt GPIO state = 100000zzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzz (32 -  z)
++1000 cycles
+Mgmt GPIO state = 110000zzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzz (48 -  z)
++1000 cycles
++1000 cycles
++1000 cycles
++1000 cycles
++1000 cycles
++1000 cycles
+Mgmt GPIO state = 110000zzzzzzzzzzzzzzzzzzzzzzzzzzzzzzz0 (48 -  Z)
+Mgmt GPIO state = 110001zzzzzzzzzzzzzzzzzzzzzzzzzzzzzzz1 (49 -  Z)
+Mgmt GPIO state = 110001zzzzzzzzzzzzzzzzzzzzzzzzzzzzzzz0 (49 -  Z)
++1000 cycles
++1000 cycles
++1000 cycles
+Mgmt GPIO state = 110001zzzzzzzzzzzzzzzzzzzzzzzzzzzzzzz1 (49 -  Z)
++1000 cycles
+Mgmt GPIO state = 110010zzzzzzzzzzzzzzzzzzzzzzzzzzzzzzz0 (50 -  Z)
+Mgmt GPIO state = 110010zzzzzzzzzzzzzzzzzzzzzzzzzzzzzzz1 (50 -  Z)
++1000 cycles
+Mgmt GPIO state = 110010zzzzzzzzzzzzzzzzzzzzzzzzzzzzzzz0 (50 -  Z)
+Mgmt GPIO state = 110010zzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzz (50 -  z)
++1000 cycles
+Mgmt GPIO state = 110011zzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzz (51 -  z)
++1000 cycles
++1000 cycles
++1000 cycles
++1000 cycles
+Mgmt GPIO state = 110011zzzzzzzzzzzzzzzzzzzzzzzzzzzzzz0z (51 -  Z)
+Mgmt GPIO state = 110001zzzzzzzzzzzzzzzzzzzzzzzzzzzzzz1z (49 -  Z)
+Mgmt GPIO state = 110001zzzzzzzzzzzzzzzzzzzzzzzzzzzzzz0z (49 -  Z)
++1000 cycles
++1000 cycles
++1000 cycles
+Mgmt GPIO state = 110001zzzzzzzzzzzzzzzzzzzzzzzzzzzzzz1z (49 -  Z)
++1000 cycles
+Mgmt GPIO state = 110010zzzzzzzzzzzzzzzzzzzzzzzzzzzzzz0z (50 -  Z)
+Mgmt GPIO state = 110010zzzzzzzzzzzzzzzzzzzzzzzzzzzzzz1z (50 -  Z)
++1000 cycles
+Mgmt GPIO state = 110010zzzzzzzzzzzzzzzzzzzzzzzzzzzzzz0z (50 -  Z)
+Mgmt GPIO state = 110010zzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzz (50 -  z)
++1000 cycles
+Mgmt GPIO state = 110011zzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzz (51 -  z)
++1000 cycles
++1000 cycles
++1000 cycles
++1000 cycles
+Mgmt GPIO state = 110011zzzzzzzzzzzzzzzzzzzzzzzzzzzzz0zz (51 -  Z)
+Mgmt GPIO state = 110001zzzzzzzzzzzzzzzzzzzzzzzzzzzzz1zz (49 -  Z)
+Mgmt GPIO state = 110001zzzzzzzzzzzzzzzzzzzzzzzzzzzzz0zz (49 -  Z)
++1000 cycles
++1000 cycles
++1000 cycles
+Mgmt GPIO state = 110001zzzzzzzzzzzzzzzzzzzzzzzzzzzzz1zz (49 -  Z)
++1000 cycles
+Mgmt GPIO state = 110010zzzzzzzzzzzzzzzzzzzzzzzzzzzzz0zz (50 -  Z)
+Mgmt GPIO state = 110010zzzzzzzzzzzzzzzzzzzzzzzzzzzzz1zz (50 -  Z)
++1000 cycles
+Mgmt GPIO state = 110010zzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzz (50 -  z)
++1000 cycles
+Mgmt GPIO state = 110011zzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzz (51 -  z)
++1000 cycles
++1000 cycles
++1000 cycles
++1000 cycles
+Mgmt GPIO state = 110011zzzzzzzzzzzzzzzzzzzzzzzzzzzz0zzz (51 -  Z)
+Mgmt GPIO state = 110001zzzzzzzzzzzzzzzzzzzzzzzzzzzz1zzz (49 -  Z)
+Mgmt GPIO state = 110001zzzzzzzzzzzzzzzzzzzzzzzzzzzz0zzz (49 -  Z)
++1000 cycles
++1000 cycles
++1000 cycles
+Mgmt GPIO state = 110001zzzzzzzzzzzzzzzzzzzzzzzzzzzz1zzz (49 -  Z)
++1000 cycles
+Mgmt GPIO state = 110010zzzzzzzzzzzzzzzzzzzzzzzzzzzz0zzz (50 -  Z)
+Mgmt GPIO state = 110010zzzzzzzzzzzzzzzzzzzzzzzzzzzz1zzz (50 -  Z)
++1000 cycles
+Mgmt GPIO state = 110010zzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzz (50 -  z)
++1000 cycles
+Mgmt GPIO state = 110011zzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzz (51 -  z)
++1000 cycles
++1000 cycles
++1000 cycles
++1000 cycles
+Mgmt GPIO state = 110011zzzzzzzzzzzzzzzzzzzzzzzzzzz0zzzz (51 -  Z)
+Mgmt GPIO state = 110001zzzzzzzzzzzzzzzzzzzzzzzzzzz1zzzz (49 -  Z)
+Mgmt GPIO state = 110001zzzzzzzzzzzzzzzzzzzzzzzzzzz0zzzz (49 -  Z)
++1000 cycles
++1000 cycles
++1000 cycles
+Mgmt GPIO state = 110001zzzzzzzzzzzzzzzzzzzzzzzzzzz1zzzz (49 -  Z)
++1000 cycles
+Mgmt GPIO state = 110010zzzzzzzzzzzzzzzzzzzzzzzzzzz0zzzz (50 -  Z)
+Mgmt GPIO state = 110010zzzzzzzzzzzzzzzzzzzzzzzzzzz1zzzz (50 -  Z)
++1000 cycles
+Mgmt GPIO state = 110010zzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzz (50 -  z)
++1000 cycles
+Mgmt GPIO state = 110011zzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzz (51 -  z)
++1000 cycles
++1000 cycles
++1000 cycles
++1000 cycles
+Mgmt GPIO state = 110011zzzzzzzzzzzzzzzzzzzzzzzzzz0zzzzz (51 -  Z)
+Mgmt GPIO state = 110001zzzzzzzzzzzzzzzzzzzzzzzzzz1zzzzz (49 -  Z)
+Mgmt GPIO state = 110001zzzzzzzzzzzzzzzzzzzzzzzzzz0zzzzz (49 -  Z)
++1000 cycles
++1000 cycles
++1000 cycles
+Mgmt GPIO state = 110001zzzzzzzzzzzzzzzzzzzzzzzzzz1zzzzz (49 -  Z)
++1000 cycles
+Mgmt GPIO state = 110010zzzzzzzzzzzzzzzzzzzzzzzzzz0zzzzz (50 -  Z)
+Mgmt GPIO state = 110010zzzzzzzzzzzzzzzzzzzzzzzzzz1zzzzz (50 -  Z)
++1000 cycles
+Mgmt GPIO state = 110010zzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzz (50 -  z)
++1000 cycles
+Mgmt GPIO state = 110011zzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzz (51 -  z)
++1000 cycles
++1000 cycles
++1000 cycles
++1000 cycles
+Mgmt GPIO state = 110011zzzzzzzzzzzzzzzzzzzzzzzzz0zzzzzz (51 -  z)
+Mgmt GPIO state = 110001zzzzzzzzzzzzzzzzzzzzzzzzz1zzzzzz (49 -  z)
+Mgmt GPIO state = 110001zzzzzzzzzzzzzzzzzzzzzzzzz0zzzzzz (49 -  z)
++1000 cycles
++1000 cycles
++1000 cycles
+Mgmt GPIO state = 110001zzzzzzzzzzzzzzzzzzzzzzzzz1zzzzzz (49 -  z)
++1000 cycles
+Mgmt GPIO state = 110010zzzzzzzzzzzzzzzzzzzzzzzzz0zzzzzz (50 -  z)
+Mgmt GPIO state = 110010zzzzzzzzzzzzzzzzzzzzzzzzz1zzzzzz (50 -  z)
++1000 cycles
+Mgmt GPIO state = 110010zzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzz (50 -  z)
++1000 cycles
+Mgmt GPIO state = 110011zzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzz (51 -  z)
++1000 cycles
++1000 cycles
++1000 cycles
++1000 cycles
+Mgmt GPIO state = 110011zzzzzzzzzzzzzzzzzzzzzzzz0zzzzzzz (51 -  z)
+Mgmt GPIO state = 110001zzzzzzzzzzzzzzzzzzzzzzzz1zzzzzzz (49 -  z)
+Mgmt GPIO state = 110001zzzzzzzzzzzzzzzzzzzzzzzz0zzzzzzz (49 -  z)
++1000 cycles
++1000 cycles
++1000 cycles
+Mgmt GPIO state = 110001zzzzzzzzzzzzzzzzzzzzzzzz1zzzzzzz (49 -  z)
++1000 cycles
+Mgmt GPIO state = 110010zzzzzzzzzzzzzzzzzzzzzzzz0zzzzzzz (50 -  z)
+Mgmt GPIO state = 110010zzzzzzzzzzzzzzzzzzzzzzzz1zzzzzzz (50 -  z)
++1000 cycles
+Mgmt GPIO state = 110010zzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzz (50 -  z)
++1000 cycles
+Mgmt GPIO state = 110011zzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzz (51 -  z)
++1000 cycles
++1000 cycles
++1000 cycles
++1000 cycles
+Mgmt GPIO state = 110011zzzzzzzzzzzzzzzzzzzzzzz0zzzzzzzz (51 -  z)
+Mgmt GPIO state = 110001zzzzzzzzzzzzzzzzzzzzzzz1zzzzzzzz (49 -  z)
+Mgmt GPIO state = 110001zzzzzzzzzzzzzzzzzzzzzzz0zzzzzzzz (49 -  z)
++1000 cycles
++1000 cycles
++1000 cycles
+Mgmt GPIO state = 110001zzzzzzzzzzzzzzzzzzzzzzz1zzzzzzzz (49 -  z)
++1000 cycles
+Mgmt GPIO state = 110010zzzzzzzzzzzzzzzzzzzzzzz0zzzzzzzz (50 -  z)
+Mgmt GPIO state = 110010zzzzzzzzzzzzzzzzzzzzzzz1zzzzzzzz (50 -  z)
++1000 cycles
+Mgmt GPIO state = 110010zzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzz (50 -  z)
++1000 cycles
+Mgmt GPIO state = 110011zzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzz (51 -  z)
++1000 cycles
++1000 cycles
++1000 cycles
++1000 cycles
+Mgmt GPIO state = 110011zzzzzzzzzzzzzzzzzzzzzz0zzzzzzzzz (51 -  z)
+Mgmt GPIO state = 110001zzzzzzzzzzzzzzzzzzzzzz1zzzzzzzzz (49 -  z)
+Mgmt GPIO state = 110001zzzzzzzzzzzzzzzzzzzzzz0zzzzzzzzz (49 -  z)
++1000 cycles
++1000 cycles
++1000 cycles
+Mgmt GPIO state = 110001zzzzzzzzzzzzzzzzzzzzzz1zzzzzzzzz (49 -  z)
++1000 cycles
+Mgmt GPIO state = 110010zzzzzzzzzzzzzzzzzzzzzz0zzzzzzzzz (50 -  z)
+Mgmt GPIO state = 110010zzzzzzzzzzzzzzzzzzzzzz1zzzzzzzzz (50 -  z)
++1000 cycles
+Mgmt GPIO state = 110010zzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzz (50 -  z)
++1000 cycles
+Mgmt GPIO state = 110011zzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzz (51 -  z)
++1000 cycles
++1000 cycles
++1000 cycles
++1000 cycles
+Mgmt GPIO state = 110011zzzzzzzzzzzzzzzzzzzzz0zzzzzzzzzz (51 -  z)
++1000 cycles
+Mgmt GPIO state = 110001zzzzzzzzzzzzzzzzzzzzz1zzzzzzzzzz (49 -  z)
+Mgmt GPIO state = 110001zzzzzzzzzzzzzzzzzzzzz0zzzzzzzzzz (49 -  z)
++1000 cycles
++1000 cycles
+Mgmt GPIO state = 110001zzzzzzzzzzzzzzzzzzzzz1zzzzzzzzzz (49 -  z)
++1000 cycles
+Mgmt GPIO state = 110010zzzzzzzzzzzzzzzzzzzzz0zzzzzzzzzz (50 -  z)
+Mgmt GPIO state = 110010zzzzzzzzzzzzzzzzzzzzz1zzzzzzzzzz (50 -  z)
++1000 cycles
+Mgmt GPIO state = 110010zzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzz (50 -  z)
++1000 cycles
+Mgmt GPIO state = 110011zzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzz (51 -  z)
++1000 cycles
++1000 cycles
++1000 cycles
++1000 cycles
+Mgmt GPIO state = 110011zzzzzzzzzzzzzzzzzzzz0zzzzzzzzzzz (51 -  z)
++1000 cycles
+Mgmt GPIO state = 110001zzzzzzzzzzzzzzzzzzzz1zzzzzzzzzzz (49 -  z)
+Mgmt GPIO state = 110001zzzzzzzzzzzzzzzzzzzz0zzzzzzzzzzz (49 -  z)
++1000 cycles
++1000 cycles
+Mgmt GPIO state = 110001zzzzzzzzzzzzzzzzzzzz1zzzzzzzzzzz (49 -  z)
++1000 cycles
+Mgmt GPIO state = 110010zzzzzzzzzzzzzzzzzzzz0zzzzzzzzzzz (50 -  z)
+Mgmt GPIO state = 110010zzzzzzzzzzzzzzzzzzzz1zzzzzzzzzzz (50 -  z)
++1000 cycles
+Mgmt GPIO state = 110010zzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzz (50 -  z)
++1000 cycles
+Mgmt GPIO state = 110011zzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzz (51 -  z)
++1000 cycles
++1000 cycles
++1000 cycles
++1000 cycles
+Mgmt GPIO state = 110011zzzzzzzzzzzzzzzzzzz0zzzzzzzzzzzz (51 -  z)
++1000 cycles
+Mgmt GPIO state = 110001zzzzzzzzzzzzzzzzzzz1zzzzzzzzzzzz (49 -  z)
+Mgmt GPIO state = 110001zzzzzzzzzzzzzzzzzzz0zzzzzzzzzzzz (49 -  z)
++1000 cycles
++1000 cycles
+Mgmt GPIO state = 110001zzzzzzzzzzzzzzzzzzz1zzzzzzzzzzzz (49 -  z)
++1000 cycles
+Mgmt GPIO state = 110010zzzzzzzzzzzzzzzzzzz0zzzzzzzzzzzz (50 -  z)
+Mgmt GPIO state = 110010zzzzzzzzzzzzzzzzzzz1zzzzzzzzzzzz (50 -  z)
++1000 cycles
+Mgmt GPIO state = 110010zzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzz (50 -  z)
++1000 cycles
+Mgmt GPIO state = 110011zzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzz (51 -  z)
++1000 cycles
++1000 cycles
++1000 cycles
++1000 cycles
+Mgmt GPIO state = 110011zzzzzzzzzzzzzzzzzz0zzzzzzzzzzzzz (51 -  z)
++1000 cycles
+Mgmt GPIO state = 110001zzzzzzzzzzzzzzzzzz1zzzzzzzzzzzzz (49 -  z)
+Mgmt GPIO state = 110001zzzzzzzzzzzzzzzzzz0zzzzzzzzzzzzz (49 -  z)
++1000 cycles
++1000 cycles
+Mgmt GPIO state = 110001zzzzzzzzzzzzzzzzzz1zzzzzzzzzzzzz (49 -  z)
++1000 cycles
+Mgmt GPIO state = 110010zzzzzzzzzzzzzzzzzz0zzzzzzzzzzzzz (50 -  z)
+Mgmt GPIO state = 110010zzzzzzzzzzzzzzzzzz1zzzzzzzzzzzzz (50 -  z)
++1000 cycles
++1000 cycles
+Mgmt GPIO state = 110010zzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzz (50 -  z)
+Mgmt GPIO state = 110011zzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzz (51 -  z)
++1000 cycles
++1000 cycles
++1000 cycles
++1000 cycles
+Mgmt GPIO state = 110011zzzzzzzzzzzzzzzzz0zzzzzzzzzzzzzz (51 -  z)
++1000 cycles
+Mgmt GPIO state = 110001zzzzzzzzzzzzzzzzz1zzzzzzzzzzzzzz (49 -  z)
+Mgmt GPIO state = 110001zzzzzzzzzzzzzzzzz0zzzzzzzzzzzzzz (49 -  z)
++1000 cycles
++1000 cycles
+Mgmt GPIO state = 110001zzzzzzzzzzzzzzzzz1zzzzzzzzzzzzzz (49 -  z)
++1000 cycles
+Mgmt GPIO state = 110010zzzzzzzzzzzzzzzzz0zzzzzzzzzzzzzz (50 -  z)
+Mgmt GPIO state = 110010zzzzzzzzzzzzzzzzz1zzzzzzzzzzzzzz (50 -  z)
++1000 cycles
++1000 cycles
+Mgmt GPIO state = 110010zzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzz (50 -  z)
+Mgmt GPIO state = 110011zzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzz (51 -  z)
++1000 cycles
++1000 cycles
++1000 cycles
++1000 cycles
+Mgmt GPIO state = 110011zzzzzzzzzzzzzzzz0zzzzzzzzzzzzzzz (51 -  z)
++1000 cycles
+Mgmt GPIO state = 110001zzzzzzzzzzzzzzzz1zzzzzzzzzzzzzzz (49 -  z)
+Mgmt GPIO state = 110001zzzzzzzzzzzzzzzz0zzzzzzzzzzzzzzz (49 -  z)
++1000 cycles
++1000 cycles
+Mgmt GPIO state = 110001zzzzzzzzzzzzzzzz1zzzzzzzzzzzzzzz (49 -  z)
++1000 cycles
+Mgmt GPIO state = 110010zzzzzzzzzzzzzzzz0zzzzzzzzzzzzzzz (50 -  z)
+Mgmt GPIO state = 110010zzzzzzzzzzzzzzzz1zzzzzzzzzzzzzzz (50 -  z)
++1000 cycles
++1000 cycles
+Mgmt GPIO state = 110010zzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzz (50 -  z)
+Mgmt GPIO state = 110011zzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzz (51 -  z)
++1000 cycles
++1000 cycles
++1000 cycles
++1000 cycles
+Mgmt GPIO state = 110011zzzzzzzzzzzzzzz0zzzzzzzzzzzzzzzz (51 -  z)
++1000 cycles
+Mgmt GPIO state = 110001zzzzzzzzzzzzzzz1zzzzzzzzzzzzzzzz (49 -  z)
+Mgmt GPIO state = 110001zzzzzzzzzzzzzzz0zzzzzzzzzzzzzzzz (49 -  z)
++1000 cycles
++1000 cycles
+Mgmt GPIO state = 110001zzzzzzzzzzzzzzz1zzzzzzzzzzzzzzzz (49 -  z)
++1000 cycles
+Mgmt GPIO state = 110010zzzzzzzzzzzzzzz0zzzzzzzzzzzzzzzz (50 -  z)
+Mgmt GPIO state = 110010zzzzzzzzzzzzzzz1zzzzzzzzzzzzzzzz (50 -  z)
++1000 cycles
++1000 cycles
+Mgmt GPIO state = 110010zzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzz (50 -  z)
+Mgmt GPIO state = 110011zzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzz (51 -  z)
++1000 cycles
++1000 cycles
++1000 cycles
++1000 cycles
+Mgmt GPIO state = 110011zzzzzzzzzzzzzz0zzzzzzzzzzzzzzzzz (51 -  z)
++1000 cycles
+Mgmt GPIO state = 110001zzzzzzzzzzzzzz1zzzzzzzzzzzzzzzzz (49 -  z)
+Mgmt GPIO state = 110001zzzzzzzzzzzzzz0zzzzzzzzzzzzzzzzz (49 -  z)
++1000 cycles
++1000 cycles
+Mgmt GPIO state = 110001zzzzzzzzzzzzzz1zzzzzzzzzzzzzzzzz (49 -  z)
++1000 cycles
+Mgmt GPIO state = 110010zzzzzzzzzzzzzz0zzzzzzzzzzzzzzzzz (50 -  z)
+Mgmt GPIO state = 110010zzzzzzzzzzzzzz1zzzzzzzzzzzzzzzzz (50 -  z)
++1000 cycles
++1000 cycles
+Mgmt GPIO state = 110010zzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzz (50 -  z)
+Mgmt GPIO state = 110011zzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzz (51 -  z)
++1000 cycles
++1000 cycles
++1000 cycles
++1000 cycles
+Mgmt GPIO state = 110011zzzzzzzzzzzzz0zzzzzzzzzzzzzzzzzz (51 -  z)
++1000 cycles
+Mgmt GPIO state = 110001zzzzzzzzzzzzz1zzzzzzzzzzzzzzzzzz (49 -  z)
+Mgmt GPIO state = 110001zzzzzzzzzzzzz0zzzzzzzzzzzzzzzzzz (49 -  z)
++1000 cycles
++1000 cycles
+Mgmt GPIO state = 110001zzzzzzzzzzzzz1zzzzzzzzzzzzzzzzzz (49 -  z)
++1000 cycles
+Mgmt GPIO state = 110010zzzzzzzzzzzzz0zzzzzzzzzzzzzzzzzz (50 -  z)
+Mgmt GPIO state = 110010zzzzzzzzzzzzz1zzzzzzzzzzzzzzzzzz (50 -  z)
++1000 cycles
++1000 cycles
+Mgmt GPIO state = 110010zzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzz (50 -  z)
+Mgmt GPIO state = 110011zzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzz (51 -  z)
++1000 cycles
++1000 cycles
++1000 cycles
++1000 cycles
+Mgmt GPIO state = 110011zzzzzzzzzzzz0zzzzzzzzzzzzzzzzzzz (51 -  z)
++1000 cycles
+Mgmt GPIO state = 110001zzzzzzzzzzzz1zzzzzzzzzzzzzzzzzzz (49 -  z)
+Mgmt GPIO state = 110001zzzzzzzzzzzz0zzzzzzzzzzzzzzzzzzz (49 -  z)
++1000 cycles
++1000 cycles
+Mgmt GPIO state = 110001zzzzzzzzzzzz1zzzzzzzzzzzzzzzzzzz (49 -  z)
++1000 cycles
+Mgmt GPIO state = 110010zzzzzzzzzzzz0zzzzzzzzzzzzzzzzzzz (50 -  z)
+Mgmt GPIO state = 110010zzzzzzzzzzzz1zzzzzzzzzzzzzzzzzzz (50 -  z)
++1000 cycles
++1000 cycles
+Mgmt GPIO state = 110010zzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzz (50 -  z)
+Mgmt GPIO state = 110011zzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzz (51 -  z)
++1000 cycles
++1000 cycles
++1000 cycles
++1000 cycles
+Mgmt GPIO state = 110011zzzzzzzzzzz0zzzzzzzzzzzzzzzzzzzz (51 -  z)
++1000 cycles
+Mgmt GPIO state = 110001zzzzzzzzzzz1zzzzzzzzzzzzzzzzzzzz (49 -  z)
+Mgmt GPIO state = 110001zzzzzzzzzzz0zzzzzzzzzzzzzzzzzzzz (49 -  z)
++1000 cycles
++1000 cycles
++1000 cycles
+Mgmt GPIO state = 110001zzzzzzzzzzz1zzzzzzzzzzzzzzzzzzzz (49 -  z)
+Mgmt GPIO state = 110010zzzzzzzzzzz0zzzzzzzzzzzzzzzzzzzz (50 -  z)
+Mgmt GPIO state = 110010zzzzzzzzzzz1zzzzzzzzzzzzzzzzzzzz (50 -  z)
++1000 cycles
++1000 cycles
+Mgmt GPIO state = 110010zzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzz (50 -  z)
+Mgmt GPIO state = 110011zzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzz (51 -  z)
++1000 cycles
++1000 cycles
++1000 cycles
++1000 cycles
+Mgmt GPIO state = 110011zzzzzzzzzz0zzzzzzzzzzzzzzzzzzzzz (51 -  z)
++1000 cycles
+Mgmt GPIO state = 110001zzzzzzzzzz1zzzzzzzzzzzzzzzzzzzzz (49 -  z)
+Mgmt GPIO state = 110001zzzzzzzzzz0zzzzzzzzzzzzzzzzzzzzz (49 -  z)
++1000 cycles
++1000 cycles
++1000 cycles
+Mgmt GPIO state = 110001zzzzzzzzzz1zzzzzzzzzzzzzzzzzzzzz (49 -  z)
+Mgmt GPIO state = 110010zzzzzzzzzz0zzzzzzzzzzzzzzzzzzzzz (50 -  z)
+Mgmt GPIO state = 110010zzzzzzzzzz1zzzzzzzzzzzzzzzzzzzzz (50 -  z)
++1000 cycles
++1000 cycles
+Mgmt GPIO state = 110010zzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzz (50 -  z)
+Mgmt GPIO state = 110011zzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzz (51 -  z)
++1000 cycles
++1000 cycles
++1000 cycles
++1000 cycles
+Mgmt GPIO state = 110011zzzzzzzzz0zzzzzzzzzzzzzzzzzzzzzz (51 -  z)
++1000 cycles
+Mgmt GPIO state = 110001zzzzzzzzz1zzzzzzzzzzzzzzzzzzzzzz (49 -  z)
+Mgmt GPIO state = 110001zzzzzzzzz0zzzzzzzzzzzzzzzzzzzzzz (49 -  z)
++1000 cycles
++1000 cycles
++1000 cycles
+Mgmt GPIO state = 110001zzzzzzzzz1zzzzzzzzzzzzzzzzzzzzzz (49 -  z)
+Mgmt GPIO state = 110010zzzzzzzzz0zzzzzzzzzzzzzzzzzzzzzz (50 -  z)
+Mgmt GPIO state = 110010zzzzzzzzz1zzzzzzzzzzzzzzzzzzzzzz (50 -  z)
++1000 cycles
++1000 cycles
+Mgmt GPIO state = 110010zzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzz (50 -  z)
+Mgmt GPIO state = 110011zzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzz (51 -  z)
++1000 cycles
++1000 cycles
++1000 cycles
++1000 cycles
+Mgmt GPIO state = 110011zzzzzzzz0zzzzzzzzzzzzzzzzzzzzzzz (51 -  z)
++1000 cycles
+Mgmt GPIO state = 110001zzzzzzzz1zzzzzzzzzzzzzzzzzzzzzzz (49 -  z)
+Mgmt GPIO state = 110001zzzzzzzz0zzzzzzzzzzzzzzzzzzzzzzz (49 -  z)
++1000 cycles
++1000 cycles
++1000 cycles
+Mgmt GPIO state = 110001zzzzzzzz1zzzzzzzzzzzzzzzzzzzzzzz (49 -  z)
+Mgmt GPIO state = 110010zzzzzzzz0zzzzzzzzzzzzzzzzzzzzzzz (50 -  z)
+Mgmt GPIO state = 110010zzzzzzzz1zzzzzzzzzzzzzzzzzzzzzzz (50 -  z)
++1000 cycles
++1000 cycles
+Mgmt GPIO state = 110010zzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzz (50 -  z)
+Mgmt GPIO state = 110011zzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzz (51 -  z)
++1000 cycles
++1000 cycles
++1000 cycles
++1000 cycles
+Mgmt GPIO state = 110011zzzzzzz0zzzzzzzzzzzzzzzzzzzzzzzz (51 -  z)
++1000 cycles
+Mgmt GPIO state = 110001zzzzzzz1zzzzzzzzzzzzzzzzzzzzzzzz (49 -  z)
+Mgmt GPIO state = 110001zzzzzzz0zzzzzzzzzzzzzzzzzzzzzzzz (49 -  z)
++1000 cycles
++1000 cycles
++1000 cycles
+Mgmt GPIO state = 110001zzzzzzz1zzzzzzzzzzzzzzzzzzzzzzzz (49 -  z)
+Mgmt GPIO state = 110010zzzzzzz0zzzzzzzzzzzzzzzzzzzzzzzz (50 -  z)
+Mgmt GPIO state = 110010zzzzzzz1zzzzzzzzzzzzzzzzzzzzzzzz (50 -  z)
++1000 cycles
++1000 cycles
+Mgmt GPIO state = 110010zzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzz (50 -  z)
+Mgmt GPIO state = 110011zzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzz (51 -  z)
++1000 cycles
++1000 cycles
++1000 cycles
++1000 cycles
+Mgmt GPIO state = 110011zzzzzz0zzzzzzzzzzzzzzzzzzzzzzzzz (51 -  z)
++1000 cycles
+Mgmt GPIO state = 110001zzzzzz1zzzzzzzzzzzzzzzzzzzzzzzzz (49 -  z)
+Mgmt GPIO state = 110001zzzzzz0zzzzzzzzzzzzzzzzzzzzzzzzz (49 -  z)
++1000 cycles
++1000 cycles
++1000 cycles
+Mgmt GPIO state = 110001zzzzzz1zzzzzzzzzzzzzzzzzzzzzzzzz (49 -  z)
+Mgmt GPIO state = 110010zzzzzz0zzzzzzzzzzzzzzzzzzzzzzzzz (50 -  z)
+Mgmt GPIO state = 110010zzzzzz1zzzzzzzzzzzzzzzzzzzzzzzzz (50 -  z)
++1000 cycles
++1000 cycles
+Mgmt GPIO state = 110010zzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzz (50 -  z)
++1000 cycles
+Mgmt GPIO state = 110011zzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzz (51 -  z)
++1000 cycles
++1000 cycles
++1000 cycles
+Mgmt GPIO state = 110011zzzzz0zzzzzzzzzzzzzzzzzzzzzzzzzz (51 -  z)
++1000 cycles
+Mgmt GPIO state = 110001zzzzz1zzzzzzzzzzzzzzzzzzzzzzzzzz (49 -  z)
+Mgmt GPIO state = 110001zzzzz0zzzzzzzzzzzzzzzzzzzzzzzzzz (49 -  z)
++1000 cycles
++1000 cycles
++1000 cycles
+Mgmt GPIO state = 110001zzzzz1zzzzzzzzzzzzzzzzzzzzzzzzzz (49 -  z)
+Mgmt GPIO state = 110010zzzzz0zzzzzzzzzzzzzzzzzzzzzzzzzz (50 -  z)
+Mgmt GPIO state = 110010zzzzz1zzzzzzzzzzzzzzzzzzzzzzzzzz (50 -  z)
++1000 cycles
++1000 cycles
+Mgmt GPIO state = 110010zzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzz (50 -  z)
++1000 cycles
+Mgmt GPIO state = 110011zzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzz (51 -  z)
++1000 cycles
++1000 cycles
++1000 cycles
+Mgmt GPIO state = 110011zzzz0zzzzzzzzzzzzzzzzzzzzzzzzzzz (51 -  z)
++1000 cycles
+Mgmt GPIO state = 110001zzzz1zzzzzzzzzzzzzzzzzzzzzzzzzzz (49 -  z)
+Mgmt GPIO state = 110001zzzz0zzzzzzzzzzzzzzzzzzzzzzzzzzz (49 -  z)
++1000 cycles
++1000 cycles
++1000 cycles
+Mgmt GPIO state = 110001zzzz1zzzzzzzzzzzzzzzzzzzzzzzzzzz (49 -  z)
+Mgmt GPIO state = 110010zzzz0zzzzzzzzzzzzzzzzzzzzzzzzzzz (50 -  z)
+Mgmt GPIO state = 110010zzzz1zzzzzzzzzzzzzzzzzzzzzzzzzzz (50 -  z)
++1000 cycles
++1000 cycles
+Mgmt GPIO state = 110010zzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzz (50 -  z)
++1000 cycles
+Mgmt GPIO state = 110011zzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzz (51 -  z)
++1000 cycles
++1000 cycles
++1000 cycles
+Mgmt GPIO state = 110011zzz0zzzzzzzzzzzzzzzzzzzzzzzzzzzz (51 -  z)
++1000 cycles
+Mgmt GPIO state = 110001zzz1zzzzzzzzzzzzzzzzzzzzzzzzzzzz (49 -  z)
+Mgmt GPIO state = 110001zzz0zzzzzzzzzzzzzzzzzzzzzzzzzzzz (49 -  z)
++1000 cycles
++1000 cycles
++1000 cycles
+Mgmt GPIO state = 110001zzz1zzzzzzzzzzzzzzzzzzzzzzzzzzzz (49 -  z)
+Mgmt GPIO state = 110010zzz0zzzzzzzzzzzzzzzzzzzzzzzzzzzz (50 -  z)
+Mgmt GPIO state = 110010zzz1zzzzzzzzzzzzzzzzzzzzzzzzzzzz (50 -  z)
++1000 cycles
++1000 cycles
+Mgmt GPIO state = 110010zzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzz (50 -  z)
++1000 cycles
+Mgmt GPIO state = 110011zzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzz (51 -  z)
++1000 cycles
++1000 cycles
++1000 cycles
++1000 cycles
+Mgmt GPIO state = 110011zz0zzzzzzzzzzzzzzzzzzzzzzzzzzzzz (51 -  z)
+Mgmt GPIO state = 110001zz1zzzzzzzzzzzzzzzzzzzzzzzzzzzzz (49 -  z)
+Mgmt GPIO state = 110001zz0zzzzzzzzzzzzzzzzzzzzzzzzzzzzz (49 -  z)
++1000 cycles
++1000 cycles
++1000 cycles
+Mgmt GPIO state = 110001zz1zzzzzzzzzzzzzzzzzzzzzzzzzzzzz (49 -  z)
+Mgmt GPIO state = 110010zz0zzzzzzzzzzzzzzzzzzzzzzzzzzzzz (50 -  z)
+Mgmt GPIO state = 110010zz1zzzzzzzzzzzzzzzzzzzzzzzzzzzzz (50 -  z)
++1000 cycles
++1000 cycles
+Mgmt GPIO state = 110010zzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzz (50 -  z)
++1000 cycles
+Mgmt GPIO state = 110011zzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzz (51 -  z)
++1000 cycles
++1000 cycles
++1000 cycles
++1000 cycles
+Mgmt GPIO state = 110011z0zzzzzzzzzzzzzzzzzzzzzzzzzzzzzz (51 -  z)
+Mgmt GPIO state = 110001z1zzzzzzzzzzzzzzzzzzzzzzzzzzzzzz (49 -  z)
+Mgmt GPIO state = 110001z0zzzzzzzzzzzzzzzzzzzzzzzzzzzzzz (49 -  z)
++1000 cycles
++1000 cycles
++1000 cycles
+Mgmt GPIO state = 110001z1zzzzzzzzzzzzzzzzzzzzzzzzzzzzzz (49 -  z)
+Mgmt GPIO state = 110010z0zzzzzzzzzzzzzzzzzzzzzzzzzzzzzz (50 -  z)
+Mgmt GPIO state = 110010z1zzzzzzzzzzzzzzzzzzzzzzzzzzzzzz (50 -  z)
++1000 cycles
++1000 cycles
+Mgmt GPIO state = 110010zzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzz (50 -  z)
++1000 cycles
+Mgmt GPIO state = 110011zzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzz (51 -  z)
++1000 cycles
++1000 cycles
++1000 cycles
++1000 cycles
+Mgmt GPIO state = 1100110zzzzzzzzzzzzzzzzzzzzzzzzzzzzzzz (51 -  z)
+Mgmt GPIO state = 1100011zzzzzzzzzzzzzzzzzzzzzzzzzzzzzzz (49 -  z)
+Mgmt GPIO state = 1100010zzzzzzzzzzzzzzzzzzzzzzzzzzzzzzz (49 -  z)
++1000 cycles
++1000 cycles
++1000 cycles
+Mgmt GPIO state = 1100011zzzzzzzzzzzzzzzzzzzzzzzzzzzzzzz (49 -  z)
+Mgmt GPIO state = 1100100zzzzzzzzzzzzzzzzzzzzzzzzzzzzzzz (50 -  z)
+Mgmt GPIO state = 1100101zzzzzzzzzzzzzzzzzzzzzzzzzzzzzzz (50 -  z)
++1000 cycles
++1000 cycles
+Mgmt GPIO state = 110010zzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzz (50 -  z)
++1000 cycles
+Mgmt GPIO state = 110011zzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzz (51 -  z)
++1000 cycles
++1000 cycles
+Monitor: Switch from low to high GPIOs
+Mgmt GPIO state = 110100zzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzz (52 -  z)
++1000 cycles
++1000 cycles
++1000 cycles
++1000 cycles
++1000 cycles
+Monitor: GPIO 0-31 pull-up/down check passed
+Mgmt GPIO state = 110100zzzzzzzzzzzzzzzzzzzzzzzzzz110101 (52 - 53)
++1000 cycles
++1000 cycles
++1000 cycles
++1000 cycles
+Mgmt GPIO state = zzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzz110101 ( z - 53)
++1000 cycles
+Monitor: Start test of high GPIOs
+Mgmt GPIO state = zzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzz110110 ( z - 54)
++1000 cycles
++1000 cycles
++1000 cycles
++1000 cycles
++1000 cycles
++1000 cycles
+Mgmt GPIO state = zzzzz0zzzzzzzzzzzzzzzzzzzzzzzzzz110110 ( Z - 54)
++1000 cycles
+Mgmt GPIO state = zzzzz1zzzzzzzzzzzzzzzzzzzzzzzzzz110111 ( Z - 55)
+Mgmt GPIO state = zzzzz0zzzzzzzzzzzzzzzzzzzzzzzzzz110111 ( Z - 55)
++1000 cycles
++1000 cycles
+Mgmt GPIO state = zzzzz1zzzzzzzzzzzzzzzzzzzzzzzzzz110111 ( Z - 55)
++1000 cycles
+Mgmt GPIO state = zzzzz0zzzzzzzzzzzzzzzzzzzzzzzzzz111000 ( Z - 56)
+Mgmt GPIO state = zzzzz1zzzzzzzzzzzzzzzzzzzzzzzzzz111000 ( Z - 56)
++1000 cycles
++1000 cycles
+Mgmt GPIO state = zzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzz111000 ( z - 56)
++1000 cycles
+Mgmt GPIO state = zzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzz111001 ( z - 57)
++1000 cycles
++1000 cycles
++1000 cycles
++1000 cycles
+Mgmt GPIO state = zzzz0zzzzzzzzzzzzzzzzzzzzzzzzzzz111001 ( Z - 57)
++1000 cycles
+Mgmt GPIO state = zzzz1zzzzzzzzzzzzzzzzzzzzzzzzzzz110111 ( Z - 55)
+Mgmt GPIO state = zzzz0zzzzzzzzzzzzzzzzzzzzzzzzzzz110111 ( Z - 55)
++1000 cycles
++1000 cycles
+Mgmt GPIO state = zzzz1zzzzzzzzzzzzzzzzzzzzzzzzzzz110111 ( Z - 55)
++1000 cycles
+Mgmt GPIO state = zzzz0zzzzzzzzzzzzzzzzzzzzzzzzzzz111000 ( Z - 56)
+Mgmt GPIO state = zzzz1zzzzzzzzzzzzzzzzzzzzzzzzzzz111000 ( Z - 56)
++1000 cycles
++1000 cycles
++1000 cycles
+Mgmt GPIO state = zzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzz111000 ( z - 56)
++1000 cycles
+Mgmt GPIO state = zzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzz111001 ( z - 57)
++1000 cycles
++1000 cycles
++1000 cycles
+Mgmt GPIO state = zzz0zzzzzzzzzzzzzzzzzzzzzzzzzzzz111001 ( Z - 57)
++1000 cycles
+Mgmt GPIO state = zzz1zzzzzzzzzzzzzzzzzzzzzzzzzzzz110111 ( Z - 55)
+Mgmt GPIO state = zzz0zzzzzzzzzzzzzzzzzzzzzzzzzzzz110111 ( Z - 55)
++1000 cycles
++1000 cycles
++1000 cycles
+Mgmt GPIO state = zzz1zzzzzzzzzzzzzzzzzzzzzzzzzzzz110111 ( Z - 55)
+Mgmt GPIO state = zzz0zzzzzzzzzzzzzzzzzzzzzzzzzzzz111000 ( Z - 56)
+Mgmt GPIO state = zzz1zzzzzzzzzzzzzzzzzzzzzzzzzzzz111000 ( Z - 56)
++1000 cycles
++1000 cycles
++1000 cycles
+Mgmt GPIO state = zzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzz111000 ( z - 56)
++1000 cycles
+Mgmt GPIO state = zzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzz111001 ( z - 57)
++1000 cycles
++1000 cycles
++1000 cycles
++1000 cycles
+Mgmt GPIO state = zz0zzzzzzzzzzzzzzzzzzzzzzzzzzzzz111001 ( Z - 57)
+Mgmt GPIO state = zz1zzzzzzzzzzzzzzzzzzzzzzzzzzzzz110111 ( Z - 55)
+Mgmt GPIO state = zz0zzzzzzzzzzzzzzzzzzzzzzzzzzzzz110111 ( Z - 55)
++1000 cycles
++1000 cycles
++1000 cycles
+Mgmt GPIO state = zz1zzzzzzzzzzzzzzzzzzzzzzzzzzzzz110111 ( Z - 55)
++1000 cycles
+Mgmt GPIO state = zz0zzzzzzzzzzzzzzzzzzzzzzzzzzzzz111000 ( Z - 56)
+Mgmt GPIO state = zz1zzzzzzzzzzzzzzzzzzzzzzzzzzzzz111000 ( Z - 56)
++1000 cycles
+Mgmt GPIO state = zz0zzzzzzzzzzzzzzzzzzzzzzzzzzzzz111000 ( Z - 56)
++1000 cycles
+Mgmt GPIO state = zzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzz111000 ( z - 56)
++1000 cycles
+Mgmt GPIO state = zzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzz111001 ( z - 57)
++1000 cycles
++1000 cycles
++1000 cycles
++1000 cycles
+Mgmt GPIO state = z0zzzzzzzzzzzzzzzzzzzzzzzzzzzzzz111001 ( Z - 57)
++1000 cycles
+Mgmt GPIO state = z1zzzzzzzzzzzzzzzzzzzzzzzzzzzzzz110111 ( Z - 55)
+Mgmt GPIO state = z0zzzzzzzzzzzzzzzzzzzzzzzzzzzzzz110111 ( Z - 55)
++1000 cycles
++1000 cycles
+Mgmt GPIO state = z1zzzzzzzzzzzzzzzzzzzzzzzzzzzzzz110111 ( Z - 55)
++1000 cycles
+Mgmt GPIO state = z0zzzzzzzzzzzzzzzzzzzzzzzzzzzzzz111000 ( Z - 56)
+Mgmt GPIO state = z1zzzzzzzzzzzzzzzzzzzzzzzzzzzzzz111000 ( Z - 56)
++1000 cycles
++1000 cycles
++1000 cycles
+Mgmt GPIO state = zzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzz111000 ( z - 56)
+Mgmt GPIO state = zzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzz111001 ( z - 57)
++1000 cycles
++1000 cycles
++1000 cycles
++1000 cycles
+Mgmt GPIO state = 0zzzzzzzzzzzzzzzzzzzzzzzzzzzzzzz111001 ( Z - 57)
++1000 cycles
+Mgmt GPIO state = 1zzzzzzzzzzzzzzzzzzzzzzzzzzzzzzz110111 ( Z - 55)
+Mgmt GPIO state = 0zzzzzzzzzzzzzzzzzzzzzzzzzzzzzzz110111 ( Z - 55)
++1000 cycles
++1000 cycles
++1000 cycles
+Mgmt GPIO state = 1zzzzzzzzzzzzzzzzzzzzzzzzzzzzzzz110111 ( Z - 55)
+Mgmt GPIO state = 0zzzzzzzzzzzzzzzzzzzzzzzzzzzzzzz111000 ( Z - 56)
+Mgmt GPIO state = 1zzzzzzzzzzzzzzzzzzzzzzzzzzzzzzz111000 ( Z - 56)
++1000 cycles
++1000 cycles
++1000 cycles
+Mgmt GPIO state = zzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzz111000 ( z - 56)
++1000 cycles
+Mgmt GPIO state = zzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzz111001 ( z - 57)
++1000 cycles
+Monitor: GPIO 37-32 pull-up/down check passed
+Monitor: Test Pullupdown (RTL) Passed
+Mgmt GPIO state = zzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzz111010 ( z - 58)
+pullupdown_tb.v:199: $finish called at 10957762500 (1ps)
+mv pullupdown.vcd RTL-pullupdown.vcd
+/usr/bin/riscv64-unknown-elf-objdump -d -S pullupdown.elf > pullupdown.lst
+rm pullupdown.vvp pullupdown.elf
