@@ -50,7 +50,8 @@ Same environment and fixes as [Phase 1](../Phase1-standalone-verification/README
 
 **📸 Screenshot 2.1 — all verdict lines (`grep -H "Monitor:" *_run.log`)**
 
-*(paste screenshot here)*
+<img width="1090" height="478" alt="image" src="https://github.com/user-attachments/assets/a3cddec5-db58-453d-bc38-3415e0792820" />
+
 
 <br><br><br>
 
@@ -75,7 +76,8 @@ flowchart LR
 
 **📸 Screenshot 3.1 — Makefile diff output**
 
-*(paste screenshot here)*
+<img width="1090" height="170" alt="image" src="https://github.com/user-attachments/assets/1b1b1b63-ce89-44ff-8f20-51537ee3993b" />
+
 
 <br><br><br>
 
@@ -91,7 +93,9 @@ flowchart LR
 
 **📸 Screenshot 4.1 — timer log, last lines**
 
-*(paste screenshot here)*
+<img width="1090" height="559" alt="image" src="https://github.com/user-attachments/assets/dc328dd1-f8b0-4b5f-b80a-bd76524d80ae" />
+
+<img width="1090" height="485" alt="image" src="https://github.com/user-attachments/assets/e70524e0-0b8e-4938-84ca-4b78d32e7404" />
 
 <br><br><br>
 
