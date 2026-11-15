@@ -1,0 +1,3 @@
+/workspaces/vsdsquadron-soc/caravel/verilog/rtl/defines.v:22:`define MPRJ_IO_PADS_1 19	/* number of user GPIO pads on user1 side */
+/workspaces/vsdsquadron-soc/caravel/verilog/rtl/defines.v:23:`define MPRJ_IO_PADS_2 19	/* number of user GPIO pads on user2 side */
+/workspaces/vsdsquadron-soc/caravel/verilog/rtl/defines.v:24:`define MPRJ_IO_PADS (`MPRJ_IO_PADS_1 + `MPRJ_IO_PADS_2)

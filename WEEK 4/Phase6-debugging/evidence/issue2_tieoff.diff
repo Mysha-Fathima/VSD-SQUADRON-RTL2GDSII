@@ -1,0 +1,12 @@
+--- /workspaces/vsdsquadron-soc/caravel/verilog/rtl/__user_project_wrapper.v	2026-11-02 08:55:36.547586777 +0000
++++ designs/src/user_project_wrapper/__user_project_wrapper.v	2026-11-15 18:24:00.275690303 +0000
+@@ -164,4 +164,8 @@
+     .wbs_dat_o(wbs_dat_o_debug)
+ );
+ 
+-endmodule	// user_project_wrapper
++// ---- Week 4 flow-only tie-offs: these outputs had no driver (RSZ-0074 in global route) ----
++assign user_irq    = 3'b000;
++assign la_data_out = 128'b0;
++
++endmodule // user_project_wrapper
