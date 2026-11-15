@@ -1,0 +1,3 @@
+93:user_project_la_example la_testing(la_data_in,la_data_out,la_oenb);
+138:user_project_gpio_example gpio_testing(
+154:debug_regs debug(

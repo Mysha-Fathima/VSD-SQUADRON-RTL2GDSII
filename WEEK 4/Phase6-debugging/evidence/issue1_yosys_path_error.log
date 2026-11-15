@@ -1,0 +1,6 @@
+mkdir -p results/sky130hd/user_project_wrapper/base/
+echo 10 > results/sky130hd/user_project_wrapper/base/clock_period.txt
+/workspaces/vsd-scl180-orfs/orfs/flow/scripts/synth.sh /workspaces/vsd-scl180-orfs/orfs/flow/scripts/synth_canonicalize.tcl ./logs/sky130hd/user_project_wrapper/base/1_1_yosys_canonicalize.log
+/workspaces/vsd-scl180-orfs/orfs/flow/scripts/synth.sh: line 4: /workspaces/vsd-scl180-orfs/orfs/tools/install/yosys/bin/yosys: No such file or directory
+make[1]: *** [Makefile:284: do-yosys-canonicalize] Error 127
+make: *** [Makefile:287: results/sky130hd/user_project_wrapper/base/1_1_yosys_canonicalize.rtlil] Error 2
