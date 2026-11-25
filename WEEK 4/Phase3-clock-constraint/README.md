@@ -6,6 +6,7 @@
 ![Phase](https://img.shields.io/badge/phase-3%20of%206-blue?style=for-the-badge) ![Port](https://img.shields.io/badge/clock%20port-wb__clk__i-blue?style=for-the-badge) ![Status](https://img.shields.io/badge/status-done-brightgreen?style=for-the-badge) ![Period](https://img.shields.io/badge/period-10%20ns-lightgrey?style=for-the-badge) ![Freq](https://img.shields.io/badge/frequency-100%20MHz-lightgrey?style=for-the-badge)
 
 **Author:** Mysha Fathima · **Period:** November 2026 · **File:** `constraint.sdc` · `create_clock -name clk -period 10 [get_ports wb_clk_i]` 
+
 [← Phase 2](../Phase2-orfs-setup/README.md) · [Phase 4 →](../Phase4-rtl2gds-run/README.md)
 
 </div>
