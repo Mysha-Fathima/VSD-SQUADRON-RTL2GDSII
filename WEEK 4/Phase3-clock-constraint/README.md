@@ -1,12 +1,12 @@
 <div align="center">
 
 # 📘 Week 4 · Phase 3 — Apply the 100 MHz Clock Constraint
+### Which port is the clock, and did the tool really see it?
 
-![Port](https://img.shields.io/badge/clock%20port-wb__clk__i-blue?style=for-the-badge)
-![Period](https://img.shields.io/badge/period-10%20ns-brightgreen?style=for-the-badge)
-![Freq](https://img.shields.io/badge/frequency-100%20MHz-lightgrey?style=for-the-badge)
+![Phase](https://img.shields.io/badge/phase-3%20of%206-blue?style=for-the-badge) ![Port](https://img.shields.io/badge/clock%20port-wb__clk__i-blue?style=for-the-badge) ![Status](https://img.shields.io/badge/status-done-brightgreen?style=for-the-badge) ![Period](https://img.shields.io/badge/period-10%20ns-lightgrey?style=for-the-badge) ![Freq](https://img.shields.io/badge/frequency-100%20MHz-lightgrey?style=for-the-badge)
 
-**Author:** Mysha Fathima · [← Phase 2](../Phase2-orfs-setup/README.md) · [Phase 4 →](../Phase4-rtl2gds-run/README.md)
+**Author:** Mysha Fathima · **Period:** November 2026 · **File:** `constraint.sdc` · `create_clock -name clk -period 10 [get_ports wb_clk_i]` 
+[← Phase 2](../Phase2-orfs-setup/README.md) · [Phase 4 →](../Phase4-rtl2gds-run/README.md)
 
 </div>
 
@@ -54,3 +54,6 @@ No problem specific to this phase.
 
 ## 💡 What I learned
 The port name must come from the RTL. The SDC copy under `results/` is the proof the tool really read my constraint.
+
+## 📝 Summary of this phase
+The only block with flip-flops is clocked by `wb_clk_i`, so that is my clock. 100 MHz means a 10 ns period, so I wrote one `create_clock` line and connected it through `config.mk`. I confirmed the tool read it by seeing the SDC copied into the results folder and the same line inside `1_synth.sdc`.
