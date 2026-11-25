@@ -1,12 +1,13 @@
 <div align="center">
 
 # 📘 Week 4 · Phase 6 — Debugging and Issue Resolution
+### What broke, how did I find it, and how did I fix it?
 
-![Issues](https://img.shields.io/badge/issues-6-blue?style=for-the-badge)
-![Resolved](https://img.shields.io/badge/resolved-6-brightgreen?style=for-the-badge)
-![RSZ](https://img.shields.io/badge/RSZ--0074%20after%20fix-0-brightgreen?style=for-the-badge)
+![Phase](https://img.shields.io/badge/phase-6%20of%206-blue?style=for-the-badge) ![Issues](https://img.shields.io/badge/issues-6-blue?style=for-the-badge) ![Status](https://img.shields.io/badge/status-done-brightgreen?style=for-the-badge) ![Resolved](https://img.shields.io/badge/resolved-6-brightgreen?style=for-the-badge) ![RSZ](https://img.shields.io/badge/RSZ--0074%20after%20fix-0-lightgrey?style=for-the-badge)
 
-**Author:** Mysha Fathima · [← Phase 5](../Phase5-gate-level-outputs/README.md) · [Week 4 home](../README.md)
+**Author:** Mysha Fathima · **Period:** November 2026 · **Main issue:** global route error RSZ-0074 on `user_project_wrapper`
+
+[← Phase 5](../Phase5-gate-level-outputs/README.md) · [Week 4 home](../README.md)
 
 </div>
 
@@ -100,3 +101,6 @@ A controlled test would run the original wrapper (with the feed-through) on the 
 
 ## 💡 What I learned
 Read the first error and the log of the failing stage. Change one thing at a time (I changed two, so one cause stays unproven). Environment problems cost more time than design problems.
+
+## 📝 Summary of this phase
+Six things went wrong, and I wrote each one down with what happened, how I noticed and what fixed it. The hardest was the global route error. It disappeared after I used the wrapper's `SIM` branch, but I also changed the OpenROAD version at the same time, so I can't prove which change fixed it. The rest were setup problems: the Yosys path, the Codespaces quota, an old OpenROAD binary and a missing Python module.
