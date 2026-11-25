@@ -1,12 +1,13 @@
 <div align="center">
 
 # 📘 Week 4 · Phase 5 — Outputs for Gate-Level Verification
+### Which files come out of the flow, and where is each one made?
 
-![Netlist](https://img.shields.io/badge/final%20netlist-6__final.v-blue?style=for-the-badge)
-![GDS](https://img.shields.io/badge/GDSII-144%20MB-brightgreen?style=for-the-badge)
-![DB](https://img.shields.io/badge/filled%20DB-6__final.odb-lightgrey?style=for-the-badge)
+![Phase](https://img.shields.io/badge/phase-5%20of%206-blue?style=for-the-badge) ![Netlist](https://img.shields.io/badge/final%20netlist-6__final.v-blue?style=for-the-badge) ![Status](https://img.shields.io/badge/status-done-brightgreen?style=for-the-badge) ![DB](https://img.shields.io/badge/filled%20DB-6__final.odb-lightgrey?style=for-the-badge) ![GDS](https://img.shields.io/badge/GDSII-144%20MB-lightgrey?style=for-the-badge)
 
-**Author:** Mysha Fathima · [← Phase 4](../Phase4-rtl2gds-run/README.md) · [Phase 6 →](../Phase6-debugging/README.md)
+**Author:** Mysha Fathima · **Period:** 23 November 2026 · **Source folder:** `flow/results/sky130hd/user_project_wrapper/base/`
+
+[← Phase 4](../Phase4-rtl2gds-run/README.md) · [Phase 6 →](../Phase6-debugging/README.md)
 
 </div>
 
@@ -69,3 +70,6 @@ gzip -c results/sky130hd/user_project_wrapper/base/6_final.gds > 6_final.gds.gz
 
 ## 💡 What I learned
 Downstream verification needs the final netlist, the filled database and the SDC. Large outputs need a storage plan before pushing.
+
+## 📝 Summary of this phase
+I listed every output with its file, size, the stage that creates it and what it is used for. The ones needed for the next stage are the final netlist, the final SDC and the filled database. The GDS and databases are large, so the repository holds the netlists, reports, logs and a compressed GDS, and the rest stays in the local flow folder.
