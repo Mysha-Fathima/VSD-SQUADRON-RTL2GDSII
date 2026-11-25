@@ -103,6 +103,9 @@ WEEK 4/
 2. Use `6_final.v` and `6_final.sdc` for gate-level simulation in the next stage.
 3. Try a smaller fixed die to see how much the utilisation and routing change.
 
+## 📝 Summary of the week
+I took the top-level wrapper of the SoC and ran it through the full OpenROAD flow at 100 MHz, from RTL to GDSII, and timing is met. Most of the learning came from finding the dependencies, building the ORFS folder structure myself, and fixing the problems that appeared on the way. Everything I ran is documented phase by phase with logs and screenshots.
+
 ## ⚠️ Honest notes
 
 - The fix for RSZ-0074 worked, but I changed the config and the OpenROAD version at the same time, so I can't say which of the two removed it. Details in Phase 6.
