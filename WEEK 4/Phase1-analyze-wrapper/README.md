@@ -1,8 +1,8 @@
+<div align="center">
+
 # 📘 Week 4 · Phase 1 — Analyze the Top-Level Wrapper
 
 ### Which modules and files does `user_project_wrapper` really need?
-
-<div>
   
 ![Phase](https://img.shields.io/badge/phase-1%20of%206-blue?style=for-the-badge) ![Used](https://img.shields.io/badge/always%20used-1%20leaf-blue?style=for-the-badge) ![Status](https://img.shields.io/badge/status-done-brightgreen?style=for-the-badge) ![RTL](https://img.shields.io/badge/RTL%20files-3-lightgrey?style=for-the-badge) ![Pads](https://img.shields.io/badge/IO%20pads-38-lightgrey?style=for-the-badge)
 
