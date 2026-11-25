@@ -1,12 +1,13 @@
 <div align="center">
 
 # 📘 Week 4 · Phase 4 — Run the RTL-to-GDS Flow
+### Does the whole flow run from RTL to GDSII, and does timing pass at 100 MHz?
 
-![Flow](https://img.shields.io/badge/flow-complete-brightgreen?style=for-the-badge)
-![Slack](https://img.shields.io/badge/setup%20slack-7.94%20ns%20MET-brightgreen?style=for-the-badge)
-![Time](https://img.shields.io/badge/runtime-23%20min-blue?style=for-the-badge)
+![Phase](https://img.shields.io/badge/phase-4%20of%206-blue?style=for-the-badge) ![Stages](https://img.shields.io/badge/stages-all%20done-brightgreen?style=for-the-badge) ![Status](https://img.shields.io/badge/status-done-brightgreen?style=for-the-badge) ![Slack](https://img.shields.io/badge/setup%20slack-7.94%20ns%20MET-brightgreen?style=for-the-badge) ![Time](https://img.shields.io/badge/runtime-23%20min-lightgrey?style=for-the-badge)
 
-**Author:** Mysha Fathima · [← Phase 3](../Phase3-clock-constraint/README.md) · [Phase 5 →](../Phase5-gate-level-outputs/README.md)
+**Author:** Mysha Fathima · **Period:** 23 November 2026 · **Tools:** ORFS, OpenROAD 26Q4-2390, Yosys 0.71 · **Platform:** sky130hd
+
+[← Phase 3](../Phase3-clock-constraint/README.md) · [Phase 5 →](../Phase5-gate-level-outputs/README.md)
 
 </div>
 
@@ -124,3 +125,6 @@ Global route error (first run) and the klayout error at the GDS step. Both are e
 
 ## 💡 What I learned
 Every stage writes its own database, so progress is easy to check. The summary table at the end shows quickly whether a stage was skipped.
+
+## 📝 Summary of this phase
+The full flow now runs from synthesis to GDSII in about 23 minutes on my laptop. Timing is met at 100 MHz: setup slack is 7.94 ns and hold slack is 0.49 ns, with zero negative slack. The first run in Codespaces failed at global route, and the final run completed after the fix described in Phase 6. Every stage left its own database and report, which I use as proof.
