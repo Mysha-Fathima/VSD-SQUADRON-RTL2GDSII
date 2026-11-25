@@ -1,0 +1,5 @@
+total 152K
+-rw-r--r-- 1 mysha mysha 83K Nov 25 09:50 1_2_yosys.v
+-rw-r--r-- 1 mysha mysha 851 Nov 25 09:50 6_final.sdc
+-rw-r--r-- 1 mysha mysha 63K Nov 25 09:50 6_final.v
+1:module user_project_wrapper (user_clock2,
