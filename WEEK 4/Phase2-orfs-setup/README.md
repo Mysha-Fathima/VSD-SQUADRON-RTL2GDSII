@@ -1,12 +1,12 @@
 <div align="center">
 
 # 📘 Week 4 · Phase 2 — Prepare the ORFS Design Environment
+### Where do the files go, and how does ORFS find them?
 
-![Platform](https://img.shields.io/badge/platform-sky130hd-blue?style=for-the-badge)
-![Die](https://img.shields.io/badge/die-2920x3520%20um-brightgreen?style=for-the-badge)
-![Defines](https://img.shields.io/badge/defines--DSIM-lightgrey?style=for-the-badge)
+![Phase](https://img.shields.io/badge/phase-2%20of%206-blue?style=for-the-badge) ![Platform](https://img.shields.io/badge/platform-sky130hd-blue?style=for-the-badge) ![Status](https://img.shields.io/badge/status-done-brightgreen?style=for-the-badge) ![Config](https://img.shields.io/badge/config%20files-2-lightgrey?style=for-the-badge) ![Die](https://img.shields.io/badge/die-2920x3520%20um-lightgrey?style=for-the-badge)
 
-**Author:** Mysha Fathima · [← Phase 1](../Phase1-analyze-wrapper/README.md) · [Phase 3 →](../Phase3-clock-constraint/README.md)
+**Author:** Mysha Fathima · **Period:** November 2026 · **Folder:** `flow/designs/sky130hd/user_project_wrapper/` · Tools: OpenROAD 26Q4, Yosys 0.71
+[← Phase 1](../Phase1-analyze-wrapper/README.md) · [Phase 3 →](../Phase3-clock-constraint/README.md)
 
 </div>
 
@@ -104,3 +104,6 @@ export OPENROAD_EXE=$HOME/OpenROAD-flow-scripts/tools/install/OpenROAD/bin/openr
 
 ## 💡 What I learned
 `config.mk` decides top module, files, defines and floorplan. Keeping the original RTL untouched and storing my edits as a diff keeps every change traceable.
+
+## 📝 Summary of this phase
+I copied the layout of the sample ORFS designs and created two folders for my design: one for the RTL and one for the config. The config tells ORFS the top module, the two Verilog files, the macros, the clock file and a fixed die size, since the wrapper has about 500 pins. I kept the original RTL untouched and applied my edits as a saved diff, so every change is traceable.
