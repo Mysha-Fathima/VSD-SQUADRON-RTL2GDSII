@@ -4,7 +4,7 @@
   <img src="https://img.shields.io/badge/Program-VSD%20Squadron-blue?style=for-the-badge" />
   <img src="https://img.shields.io/badge/Domain-VLSI%20Physical%20Design-purple?style=for-the-badge" />
   <img src="https://img.shields.io/badge/Focus-RTL--to--GDSII-orange?style=for-the-badge" />
-  <img src="https://img.shields.io/badge/Progress-Week%203%20Completed-brightgreen?style=for-the-badge" />
+  <img src="https://img.shields.io/badge/Progress-Week%204%20Completed-brightgreen?style=for-the-badge" />
 </p>
 
 <p align="center">
@@ -49,6 +49,7 @@ This repository serves as a technical portfolio showcasing my exposure to open-s
 | Week 1 | OpenLane Physical Design Workshop | Physical Design fundamentals, SKY130, RTL2GDS, PNR | ✅ Completed |
 | Week 2 | Toolchain Mastery and ORFS — Cloud to Local | Cloud ORFS, toolchain setup, local installation, RTL2GDS run, Unix debugging | ✅ Completed |
 | Week 3 | Block-Level Verification | Standalone verification, standalone tests, Caravel tests, verification flow, documentation | ✅ Completed |
+| Week 4 | RTL-to-GDS of the User Project Wrapper | ORFS setup for a real wrapper, 100 MHz clock, full RTL-to-GDSII flow, outputs for gate-level work, debugging | ✅ Completed |
 
 ---
 
@@ -101,6 +102,23 @@ This repository serves as a technical portfolio showcasing my exposure to open-s
 
 </details>
 
+<details>
+<summary><b>📘 Week 4 — RTL-to-GDS of the User Project Wrapper</b></summary>
+
+**Focus:** Running a real top-level wrapper through ORFS at 100 MHz, from RTL to GDSII, and documenting every stage.
+
+[➡️ View Week 4 README](<WEEK 4/README.md>)
+
+| Phase | Topic | Status |
+|---|---|---|
+| Phase 1 | Analyze the wrapper | ✅ Completed |
+| Phase 2 | ORFS design environment | ✅ Completed |
+| Phase 3 | 100 MHz clock constraint | ✅ Completed |
+| Phase 4 | RTL-to-GDS flow | ✅ Completed |
+| Phase 5 | Outputs for gate-level work | ✅ Completed |
+| Phase 6 | Debugging | ✅ Completed |
+
+</details>
 ---
 
 ## 🔄 RTL-to-GDSII Implementation Flow
