@@ -1,18 +1,16 @@
-<div align="center">
-
 # 📘 Week 4 · Phase 1 — Analyze the Top-Level Wrapper
 
-![Modules](https://img.shields.io/badge/always%20used-1%20leaf-blue?style=for-the-badge)
-![Files](https://img.shields.io/badge/RTL%20files-3-brightgreen?style=for-the-badge)
-![Pads](https://img.shields.io/badge/IO%20pads-38-lightgrey?style=for-the-badge)
+### Which modules and files does `user_project_wrapper` really need?
 
-**Author:** Mysha Fathima · [Week 4 home](../README.md) · [Phase 2 →](../Phase2-orfs-setup/README.md)
+<div>
+  
+![Phase](https://img.shields.io/badge/phase-1%20of%206-blue?style=for-the-badge) ![Used](https://img.shields.io/badge/always%20used-1%20leaf-blue?style=for-the-badge) ![Status](https://img.shields.io/badge/status-done-brightgreen?style=for-the-badge) ![RTL](https://img.shields.io/badge/RTL%20files-3-lightgrey?style=for-the-badge) ![Pads](https://img.shields.io/badge/IO%20pads-38-lightgrey?style=for-the-badge)
+
+**Author:** Mysha Fathima · **Period:** November 2026 · **File:** `caravel/verilog/rtl/__user_project_wrapper.v` · branch `add-vsdsquadron-soc-folders`
+· [Week 4 home](../README.md) · [Phase 2 →](../Phase2-orfs-setup/README.md) 
 
 </div>
 
-## 🗂️ Navigation
-
-[Week 4 home](../README.md) · Phase 1 · [Phase 2 ➡](../Phase2-orfs-setup/README.md)
 ---
 
 ## 🎯 Goal
@@ -106,3 +104,6 @@ The wrapper is a shell around the user project. Only `debug_regs` is always insi
 
 ## 💡 What I learned
 Hidden dependencies live in macros and `` `ifdef `` blocks, so reading the instantiation block first saves a lot of guessing.
+
+## 📝 Summary of this phase
+Before touching any tool, I read the wrapper to find out what it really needs. Only one real block, `debug_regs`, is always inside it. The two example blocks are switched off by default, and the pad count comes from a macro in `defines.v` that the wrapper doesn't include. So I now know exactly three RTL files are needed and one macro has to be passed to the flow.
