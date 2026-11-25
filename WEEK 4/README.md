@@ -64,6 +64,44 @@ flowchart LR
 ## 🖥️ My environment
 
 Windows 10 laptop (8 GB RAM, 4 cores), WSL2 Ubuntu 24.04. OpenROAD 26Q4-2390 built from source, Yosys 0.71+59 from OSS CAD Suite, KLayout 0.28.16. I started in GitHub Codespaces, but the free hours ran out, so the final run is local.
+## 🗃️ Repository layout
+
+```
+WEEK 4/
+├── README.md                      (this page)
+├── Phase1-analyze-wrapper/        dependency tree, RTL files, evidence
+├── Phase2-orfs-setup/             config.mk, directory structure
+├── Phase3-clock-constraint/       constraint.sdc, clock proof
+├── Phase4-rtl2gds-run/            stage logs, timing, statistics
+├── Phase5-gate-level-outputs/     netlists, reports, GDS (compressed)
+└── Phase6-debugging/              6 issues, diffs, error logs
+```
+
+## 🧠 Command cheat sheet (what each command does, in simple words)
+
+| Command | What it does | Easy way to remember |
+|---|---|---|
+| `git clone -b <branch> --depth 1 <url>` | Downloads a repo (one branch, latest version only) | Photocopying one chapter, not the whole library |
+| `git submodule update --init --recursive tools/OpenROAD` | Downloads a sub-project that the main repo depends on | Borrowing a book listed in the catalogue |
+| `sudo ./setup.sh` | Installs everything the build needs | Buying all ingredients before cooking |
+| `./build_openroad.sh --local --threads 2` | Compiles OpenROAD from source using 2 CPU cores | Baking with 2 chefs: slower but the kitchen doesn't overflow |
+| `export YOSYS_EXE=... OPENROAD_EXE=...` | Tells ORFS where the tools are | Saving a contact's address |
+| `make DESIGN_CONFIG=<config.mk> synth` | Runs only synthesis for my design | One step of the recipe |
+| `make DESIGN_CONFIG=<config.mk>` | Runs every remaining stage up to GDS, skipping finished ones | Continuing the recipe where I stopped |
+| `source .venv/bin/activate` | Switches to the project's own Python packages (has klayout) | Picking up the right toolbox |
+| `patch <file> < change.diff` | Re-applies saved edits to a file | Following a teacher's edit list |
+| `find <folder> -name <file>` | Searches for a file by name | Search box in File Explorer |
+| `grep -n -i -E "a\|b" <file>` | Shows lines containing a word, with line numbers | Ctrl+F in the terminal |
+| `ls -lh` / `du -sh` | Lists files with sizes / shows folder size | Checking how full the bag is |
+| `gzip -c <file> > <file>.gz` | Compresses a file and keeps the original | Zipping a large file for email |
+| `... \| tee file.log` | Shows output on screen and saves a copy | Photocopier next to the printer |
+| `Ctrl + C` | Stops the running command | Stop button on a microwave |
+| `git add / commit / push` | Stage, save a snapshot of, and upload my changes | Pack the box, label it, post it |
+
+## 🔭 What I would do next
+1. Run the original wrapper (with the `io_in → io_out` feed-through) on the new OpenROAD to find out which change really fixed RSZ-0074.
+2. Use `6_final.v` and `6_final.sdc` for gate-level simulation in the next stage.
+3. Try a smaller fixed die to see how much the utilisation and routing change.
 
 ## ⚠️ Honest notes
 
