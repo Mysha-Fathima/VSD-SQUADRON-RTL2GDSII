@@ -1,0 +1,21 @@
+OpenROAD 26Q4-2390-g1df36bc6d5 
+Features included (+) or not (-): -GPU +GUI
+This program is licensed under the BSD-3 license. See the LICENSE file for details.
+Components of this program may be licensed under more restrictive licenses which must be honored.
+[INFO ORD-0030] Using 4 thread(s).
+read_liberty ./objects/binary_libs/sky130hd/sky130_fd_sc_hd__tt_025C_1v80@12800135-1795166754-e465921f.blib
+read_db ./results/sky130hd/user_project_wrapper/base/5_2_route.odb
+read_sdc ./results/sky130hd/user_project_wrapper/base/5_2_route.sdc
+source /home/mysha/OpenROAD-flow-scripts/flow/platforms/sky130hd/setRC.tcl
+filler_placement "sky130_fd_sc_hd__fill_1 sky130_fd_sc_hd__fill_2 sky130_fd_sc_hd__fill_4 sky130_fd_sc_hd__fill_8"
+[INFO DPL-0001] Placed 1216315 filler instances.
+Took 11 seconds: filler_placement "sky130_fd_sc_hd__fill_1 sky130_fd_sc_hd__fill_2 sky130_fd_sc_hd__fill_4 sky130_fd_sc_hd__fill_8"
+Design area 175204 um^2 2% utilization.
+write_sdc -no_timestamp ./results/sky130hd/user_project_wrapper/base/5_3_fillcell.sdc
+write_db ./results/sky130hd/user_project_wrapper/base/5_3_fillcell.odb
+Took 6 seconds: write_db ./results/sky130hd/user_project_wrapper/base/5_3_fillcell.odb
+Elapsed time: 0:30.80[h:]min:sec. CPU time: user 20.16 sys 11.67 (103%). Peak memory: 1813448KB.
+Log                    Ext     Elapsed      CPU     CPU/ Peak Mem sha1sum
+                                     s        s  Elapsed       MB [0:10)
+5_3_fillcell           .odb         30       32     1.03     1770 bf9261c4fc
+5_3_fillcell           .sdc                                       f34734e258

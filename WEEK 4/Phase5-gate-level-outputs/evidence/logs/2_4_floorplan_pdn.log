@@ -1,0 +1,23 @@
+OpenROAD 26Q4-2390-g1df36bc6d5 
+Features included (+) or not (-): -GPU +GUI
+This program is licensed under the BSD-3 license. See the LICENSE file for details.
+Components of this program may be licensed under more restrictive licenses which must be honored.
+[INFO ORD-0030] Using 4 thread(s).
+read_liberty ./objects/binary_libs/sky130hd/sky130_fd_sc_hd__tt_025C_1v80@12800135-1795166754-e465921f.blib
+read_db ./results/sky130hd/user_project_wrapper/base/2_3_floorplan_tapcell.odb
+read_sdc ./results/sky130hd/user_project_wrapper/base/2_3_floorplan_tapcell.sdc
+source /home/mysha/OpenROAD-flow-scripts/flow/platforms/sky130hd/setRC.tcl
+[WARNING PDN-1051] No instances found for grid (CORE_macro_grid_1).
+[WARNING PDN-1051] No instances found for grid (CORE_macro_grid_2).
+[INFO PDN-0001] Inserting grid: grid
+[INFO PDN-0500] Runtime: 7.55s
+check_placement -fixed -verbose
+Took 5 seconds: check_placement -fixed -verbose
+Design area 175886 um^2 2% utilization.
+write_sdc -no_timestamp ./results/sky130hd/user_project_wrapper/base/2_4_floorplan_pdn.sdc
+write_db ./results/sky130hd/user_project_wrapper/base/2_4_floorplan_pdn.odb
+Elapsed time: 0:13.18[h:]min:sec. CPU time: user 10.89 sys 2.62 (102%). Peak memory: 743616KB.
+Log                    Ext     Elapsed      CPU     CPU/ Peak Mem sha1sum
+                                     s        s  Elapsed       MB [0:10)
+2_4_floorplan_pdn      .odb         13       14     1.03      726 6faf14ffe7
+2_4_floorplan_pdn      .sdc                                       c64b0e57d1

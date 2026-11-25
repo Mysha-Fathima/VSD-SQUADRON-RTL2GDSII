@@ -1,0 +1,300 @@
+/home/mysha/OpenROAD-flow-scripts/tools/yosys/abc/src/sat/kissat/walk.c:581:23: note: in expansion of macro ‘WATCHES’
+  581 |   watches *watches = &WATCHES (flipped);
+      |                       ^~~~~~~
+[ 39%] Building CXX object CMakeFiles/libyosys-abc.dir/abc/src/sat/kissat/warmup.c.o
+In file included from /home/mysha/OpenROAD-flow-scripts/tools/yosys/abc/src/sat/kissat/reference.h:4,
+                 from /home/mysha/OpenROAD-flow-scripts/tools/yosys/abc/src/sat/kissat/arena.h:4,
+                 from /home/mysha/OpenROAD-flow-scripts/tools/yosys/abc/src/sat/kissat/internal.h:4,
+                 from /home/mysha/OpenROAD-flow-scripts/tools/yosys/abc/src/sat/kissat/warmup.c:4:
+/home/mysha/OpenROAD-flow-scripts/tools/yosys/abc/src/sat/kissat/heap.h: In function ‘unsigned int abc::kissat_max_heap(heap*)’:
+/home/mysha/OpenROAD-flow-scripts/tools/yosys/abc/src/sat/kissat/stack.h:29:56: warning: top-level comma expression in array subscript is deprecated [-Wcomma-subscript]
+   29 |   (BEGIN_STACK (S)[KISSAT_assert ((N) < SIZE_STACK (S)), (N)])
+      |                                                        ^
+/home/mysha/OpenROAD-flow-scripts/tools/yosys/abc/src/sat/kissat/heap.h:57:10: note: in expansion of macro ‘PEEK_STACK’
+   57 |   return PEEK_STACK (heap->stack, 0);
+      |          ^~~~~~~~~~
+[ 39%] Building CXX object CMakeFiles/libyosys-abc.dir/abc/src/sat/kissat/watch.c.o
+In file included from /home/mysha/OpenROAD-flow-scripts/tools/yosys/abc/src/sat/kissat/reference.h:4,
+                 from /home/mysha/OpenROAD-flow-scripts/tools/yosys/abc/src/sat/kissat/arena.h:4,
+                 from /home/mysha/OpenROAD-flow-scripts/tools/yosys/abc/src/sat/kissat/internal.h:4,
+                 from /home/mysha/OpenROAD-flow-scripts/tools/yosys/abc/src/sat/kissat/inlinevector.h:4,
+                 from /home/mysha/OpenROAD-flow-scripts/tools/yosys/abc/src/sat/kissat/inline.h:4,
+                 from /home/mysha/OpenROAD-flow-scripts/tools/yosys/abc/src/sat/kissat/watch.c:3:
+/home/mysha/OpenROAD-flow-scripts/tools/yosys/abc/src/sat/kissat/heap.h: In function ‘unsigned int abc::kissat_max_heap(heap*)’:
+/home/mysha/OpenROAD-flow-scripts/tools/yosys/abc/src/sat/kissat/stack.h:29:56: warning: top-level comma expression in array subscript is deprecated [-Wcomma-subscript]
+   29 |   (BEGIN_STACK (S)[KISSAT_assert ((N) < SIZE_STACK (S)), (N)])
+      |                                                        ^
+/home/mysha/OpenROAD-flow-scripts/tools/yosys/abc/src/sat/kissat/heap.h:57:10: note: in expansion of macro ‘PEEK_STACK’
+   57 |   return PEEK_STACK (heap->stack, 0);
+      |          ^~~~~~~~~~
+In file included from /home/mysha/OpenROAD-flow-scripts/tools/yosys/abc/src/sat/kissat/internal.h:34:
+/home/mysha/OpenROAD-flow-scripts/tools/yosys/abc/src/sat/kissat/inline.h: In function ‘void abc::kissat_watch_other(kissat*, unsigned int, unsigned int)’:
+/home/mysha/OpenROAD-flow-scripts/tools/yosys/abc/src/sat/kissat/watch.h:137:67: warning: top-level comma expression in array subscript is deprecated [-Wcomma-subscript]
+  137 | #define WATCHES(LIT) (solver->watches[KISSAT_assert ((LIT) < LITS), (LIT)])
+      |                                                                   ^
+/home/mysha/OpenROAD-flow-scripts/tools/yosys/abc/src/sat/kissat/inline.h:100:23: note: in expansion of macro ‘WATCHES’
+  100 |   watches *watches = &WATCHES (lit);
+      |                       ^~~~~~~
+/home/mysha/OpenROAD-flow-scripts/tools/yosys/abc/src/sat/kissat/inline.h: In function ‘void abc::kissat_watch_blocking(kissat*, unsigned int, unsigned int, reference)’:
+/home/mysha/OpenROAD-flow-scripts/tools/yosys/abc/src/sat/kissat/watch.h:137:67: warning: top-level comma expression in array subscript is deprecated [-Wcomma-subscript]
+  137 | #define WATCHES(LIT) (solver->watches[KISSAT_assert ((LIT) < LITS), (LIT)])
+      |                                                                   ^
+/home/mysha/OpenROAD-flow-scripts/tools/yosys/abc/src/sat/kissat/inline.h:116:23: note: in expansion of macro ‘WATCHES’
+  116 |   watches *watches = &WATCHES (lit);
+      |                       ^~~~~~~
+/home/mysha/OpenROAD-flow-scripts/tools/yosys/abc/src/sat/kissat/inline.h: In function ‘void abc::kissat_unwatch_blocking(kissat*, unsigned int, reference)’:
+/home/mysha/OpenROAD-flow-scripts/tools/yosys/abc/src/sat/kissat/watch.h:137:67: warning: top-level comma expression in array subscript is deprecated [-Wcomma-subscript]
+  137 | #define WATCHES(LIT) (solver->watches[KISSAT_assert ((LIT) < LITS), (LIT)])
+      |                                                                   ^
+/home/mysha/OpenROAD-flow-scripts/tools/yosys/abc/src/sat/kissat/inline.h:124:23: note: in expansion of macro ‘WATCHES’
+  124 |   watches *watches = &WATCHES (lit);
+      |                       ^~~~~~~
+/home/mysha/OpenROAD-flow-scripts/tools/yosys/abc/src/sat/kissat/inline.h: In function ‘void abc::kissat_disconnect_binary(kissat*, unsigned int, unsigned int)’:
+/home/mysha/OpenROAD-flow-scripts/tools/yosys/abc/src/sat/kissat/watch.h:137:67: warning: top-level comma expression in array subscript is deprecated [-Wcomma-subscript]
+  137 | #define WATCHES(LIT) (solver->watches[KISSAT_assert ((LIT) < LITS), (LIT)])
+      |                                                                   ^
+/home/mysha/OpenROAD-flow-scripts/tools/yosys/abc/src/sat/kissat/inline.h:131:23: note: in expansion of macro ‘WATCHES’
+  131 |   watches *watches = &WATCHES (lit);
+      |                       ^~~~~~~
+/home/mysha/OpenROAD-flow-scripts/tools/yosys/abc/src/sat/kissat/inline.h: In function ‘void abc::kissat_disconnect_reference(kissat*, unsigned int, reference)’:
+/home/mysha/OpenROAD-flow-scripts/tools/yosys/abc/src/sat/kissat/watch.h:137:67: warning: top-level comma expression in array subscript is deprecated [-Wcomma-subscript]
+  137 | #define WATCHES(LIT) (solver->watches[KISSAT_assert ((LIT) < LITS), (LIT)])
+      |                                                                   ^
+/home/mysha/OpenROAD-flow-scripts/tools/yosys/abc/src/sat/kissat/inline.h:141:23: note: in expansion of macro ‘WATCHES’
+  141 |   watches *watches = &WATCHES (lit);
+      |                       ^~~~~~~
+/home/mysha/OpenROAD-flow-scripts/tools/yosys/abc/src/sat/kissat/inline.h: In function ‘void abc::kissat_connect_literal(kissat*, unsigned int, reference)’:
+/home/mysha/OpenROAD-flow-scripts/tools/yosys/abc/src/sat/kissat/watch.h:137:67: warning: top-level comma expression in array subscript is deprecated [-Wcomma-subscript]
+  137 | #define WATCHES(LIT) (solver->watches[KISSAT_assert ((LIT) < LITS), (LIT)])
+      |                                                                   ^
+/home/mysha/OpenROAD-flow-scripts/tools/yosys/abc/src/sat/kissat/inline.h:156:23: note: in expansion of macro ‘WATCHES’
+  156 |   watches *watches = &WATCHES (lit);
+      |                       ^~~~~~~
+/home/mysha/OpenROAD-flow-scripts/tools/yosys/abc/src/sat/kissat/inline.h: In function ‘abc::clause* abc::kissat_unchecked_dereference_clause(kissat*, reference)’:
+/home/mysha/OpenROAD-flow-scripts/tools/yosys/abc/src/sat/kissat/stack.h:29:56: warning: top-level comma expression in array subscript is deprecated [-Wcomma-subscript]
+   29 |   (BEGIN_STACK (S)[KISSAT_assert ((N) < SIZE_STACK (S)), (N)])
+      |                                                        ^
+/home/mysha/OpenROAD-flow-scripts/tools/yosys/abc/src/sat/kissat/inline.h:162:22: note: in expansion of macro ‘PEEK_STACK’
+  162 |   return (clause *) &PEEK_STACK (solver->arena, ref);
+      |                      ^~~~~~~~~~
+/home/mysha/OpenROAD-flow-scripts/tools/yosys/abc/src/sat/kissat/inline.h: In function ‘int abc::kissat_export_literal(kissat*, unsigned int)’:
+/home/mysha/OpenROAD-flow-scripts/tools/yosys/abc/src/sat/kissat/stack.h:29:56: warning: top-level comma expression in array subscript is deprecated [-Wcomma-subscript]
+   29 |   (BEGIN_STACK (S)[KISSAT_assert ((N) < SIZE_STACK (S)), (N)])
+      |                                                        ^
+/home/mysha/OpenROAD-flow-scripts/tools/yosys/abc/src/sat/kissat/inline.h:203:14: note: in expansion of macro ‘PEEK_STACK’
+  203 |   int elit = PEEK_STACK (solver->export_, iidx);
+      |              ^~~~~~~~~~
+/home/mysha/OpenROAD-flow-scripts/tools/yosys/abc/src/sat/kissat/inline.h: In function ‘unsigned int abc::kissat_map_literal(kissat*, unsigned int, bool)’:
+/home/mysha/OpenROAD-flow-scripts/tools/yosys/abc/src/sat/kissat/stack.h:29:56: warning: top-level comma expression in array subscript is deprecated [-Wcomma-subscript]
+   29 |   (BEGIN_STACK (S)[KISSAT_assert ((N) < SIZE_STACK (S)), (N)])
+      |                                                        ^
+/home/mysha/OpenROAD-flow-scripts/tools/yosys/abc/src/sat/kissat/inline.h:220:33: note: in expansion of macro ‘PEEK_STACK’
+  220 |   const import *const import = &PEEK_STACK (solver->import, eidx);
+      |                                 ^~~~~~~~~~
+/home/mysha/OpenROAD-flow-scripts/tools/yosys/abc/src/sat/kissat/watch.c: In function ‘void abc::kissat_flush_large_connected(kissat*)’:
+/home/mysha/OpenROAD-flow-scripts/tools/yosys/abc/src/sat/kissat/watch.h:137:67: warning: top-level comma expression in array subscript is deprecated [-Wcomma-subscript]
+  137 | #define WATCHES(LIT) (solver->watches[KISSAT_assert ((LIT) < LITS), (LIT)])
+      |                                                                   ^
+/home/mysha/OpenROAD-flow-scripts/tools/yosys/abc/src/sat/kissat/watch.c:211:25: note: in expansion of macro ‘WATCHES’
+  211 |     watches *watches = &WATCHES (lit);
+      |                         ^~~~~~~
+[ 39%] Building CXX object CMakeFiles/libyosys-abc.dir/abc/src/sat/kissat/weaken.c.o
+In file included from /home/mysha/OpenROAD-flow-scripts/tools/yosys/abc/src/sat/kissat/reference.h:4,
+                 from /home/mysha/OpenROAD-flow-scripts/tools/yosys/abc/src/sat/kissat/arena.h:4,
+                 from /home/mysha/OpenROAD-flow-scripts/tools/yosys/abc/src/sat/kissat/internal.h:4,
+                 from /home/mysha/OpenROAD-flow-scripts/tools/yosys/abc/src/sat/kissat/inlinevector.h:4,
+                 from /home/mysha/OpenROAD-flow-scripts/tools/yosys/abc/src/sat/kissat/inline.h:4,
+                 from /home/mysha/OpenROAD-flow-scripts/tools/yosys/abc/src/sat/kissat/weaken.c:2:
+/home/mysha/OpenROAD-flow-scripts/tools/yosys/abc/src/sat/kissat/heap.h: In function ‘unsigned int abc::kissat_max_heap(heap*)’:
+/home/mysha/OpenROAD-flow-scripts/tools/yosys/abc/src/sat/kissat/stack.h:29:56: warning: top-level comma expression in array subscript is deprecated [-Wcomma-subscript]
+   29 |   (BEGIN_STACK (S)[KISSAT_assert ((N) < SIZE_STACK (S)), (N)])
+      |                                                        ^
+/home/mysha/OpenROAD-flow-scripts/tools/yosys/abc/src/sat/kissat/heap.h:57:10: note: in expansion of macro ‘PEEK_STACK’
+   57 |   return PEEK_STACK (heap->stack, 0);
+      |          ^~~~~~~~~~
+In file included from /home/mysha/OpenROAD-flow-scripts/tools/yosys/abc/src/sat/kissat/internal.h:34:
+/home/mysha/OpenROAD-flow-scripts/tools/yosys/abc/src/sat/kissat/inline.h: In function ‘void abc::kissat_watch_other(kissat*, unsigned int, unsigned int)’:
+/home/mysha/OpenROAD-flow-scripts/tools/yosys/abc/src/sat/kissat/watch.h:137:67: warning: top-level comma expression in array subscript is deprecated [-Wcomma-subscript]
+  137 | #define WATCHES(LIT) (solver->watches[KISSAT_assert ((LIT) < LITS), (LIT)])
+      |                                                                   ^
+/home/mysha/OpenROAD-flow-scripts/tools/yosys/abc/src/sat/kissat/inline.h:100:23: note: in expansion of macro ‘WATCHES’
+  100 |   watches *watches = &WATCHES (lit);
+      |                       ^~~~~~~
+/home/mysha/OpenROAD-flow-scripts/tools/yosys/abc/src/sat/kissat/inline.h: In function ‘void abc::kissat_watch_blocking(kissat*, unsigned int, unsigned int, reference)’:
+/home/mysha/OpenROAD-flow-scripts/tools/yosys/abc/src/sat/kissat/watch.h:137:67: warning: top-level comma expression in array subscript is deprecated [-Wcomma-subscript]
+  137 | #define WATCHES(LIT) (solver->watches[KISSAT_assert ((LIT) < LITS), (LIT)])
+      |                                                                   ^
+/home/mysha/OpenROAD-flow-scripts/tools/yosys/abc/src/sat/kissat/inline.h:116:23: note: in expansion of macro ‘WATCHES’
+  116 |   watches *watches = &WATCHES (lit);
+      |                       ^~~~~~~
+/home/mysha/OpenROAD-flow-scripts/tools/yosys/abc/src/sat/kissat/inline.h: In function ‘void abc::kissat_unwatch_blocking(kissat*, unsigned int, reference)’:
+/home/mysha/OpenROAD-flow-scripts/tools/yosys/abc/src/sat/kissat/watch.h:137:67: warning: top-level comma expression in array subscript is deprecated [-Wcomma-subscript]
+  137 | #define WATCHES(LIT) (solver->watches[KISSAT_assert ((LIT) < LITS), (LIT)])
+      |                                                                   ^
+/home/mysha/OpenROAD-flow-scripts/tools/yosys/abc/src/sat/kissat/inline.h:124:23: note: in expansion of macro ‘WATCHES’
+  124 |   watches *watches = &WATCHES (lit);
+      |                       ^~~~~~~
+/home/mysha/OpenROAD-flow-scripts/tools/yosys/abc/src/sat/kissat/inline.h: In function ‘void abc::kissat_disconnect_binary(kissat*, unsigned int, unsigned int)’:
+/home/mysha/OpenROAD-flow-scripts/tools/yosys/abc/src/sat/kissat/watch.h:137:67: warning: top-level comma expression in array subscript is deprecated [-Wcomma-subscript]
+  137 | #define WATCHES(LIT) (solver->watches[KISSAT_assert ((LIT) < LITS), (LIT)])
+      |                                                                   ^
+/home/mysha/OpenROAD-flow-scripts/tools/yosys/abc/src/sat/kissat/inline.h:131:23: note: in expansion of macro ‘WATCHES’
+  131 |   watches *watches = &WATCHES (lit);
+      |                       ^~~~~~~
+/home/mysha/OpenROAD-flow-scripts/tools/yosys/abc/src/sat/kissat/inline.h: In function ‘void abc::kissat_disconnect_reference(kissat*, unsigned int, reference)’:
+/home/mysha/OpenROAD-flow-scripts/tools/yosys/abc/src/sat/kissat/watch.h:137:67: warning: top-level comma expression in array subscript is deprecated [-Wcomma-subscript]
+  137 | #define WATCHES(LIT) (solver->watches[KISSAT_assert ((LIT) < LITS), (LIT)])
+      |                                                                   ^
+/home/mysha/OpenROAD-flow-scripts/tools/yosys/abc/src/sat/kissat/inline.h:141:23: note: in expansion of macro ‘WATCHES’
+  141 |   watches *watches = &WATCHES (lit);
+      |                       ^~~~~~~
+/home/mysha/OpenROAD-flow-scripts/tools/yosys/abc/src/sat/kissat/inline.h: In function ‘void abc::kissat_connect_literal(kissat*, unsigned int, reference)’:
+/home/mysha/OpenROAD-flow-scripts/tools/yosys/abc/src/sat/kissat/watch.h:137:67: warning: top-level comma expression in array subscript is deprecated [-Wcomma-subscript]
+  137 | #define WATCHES(LIT) (solver->watches[KISSAT_assert ((LIT) < LITS), (LIT)])
+      |                                                                   ^
+/home/mysha/OpenROAD-flow-scripts/tools/yosys/abc/src/sat/kissat/inline.h:156:23: note: in expansion of macro ‘WATCHES’
+  156 |   watches *watches = &WATCHES (lit);
+      |                       ^~~~~~~
+/home/mysha/OpenROAD-flow-scripts/tools/yosys/abc/src/sat/kissat/inline.h: In function ‘abc::clause* abc::kissat_unchecked_dereference_clause(kissat*, reference)’:
+/home/mysha/OpenROAD-flow-scripts/tools/yosys/abc/src/sat/kissat/stack.h:29:56: warning: top-level comma expression in array subscript is deprecated [-Wcomma-subscript]
+   29 |   (BEGIN_STACK (S)[KISSAT_assert ((N) < SIZE_STACK (S)), (N)])
+      |                                                        ^
+/home/mysha/OpenROAD-flow-scripts/tools/yosys/abc/src/sat/kissat/inline.h:162:22: note: in expansion of macro ‘PEEK_STACK’
+  162 |   return (clause *) &PEEK_STACK (solver->arena, ref);
+      |                      ^~~~~~~~~~
+/home/mysha/OpenROAD-flow-scripts/tools/yosys/abc/src/sat/kissat/inline.h: In function ‘int abc::kissat_export_literal(kissat*, unsigned int)’:
+/home/mysha/OpenROAD-flow-scripts/tools/yosys/abc/src/sat/kissat/stack.h:29:56: warning: top-level comma expression in array subscript is deprecated [-Wcomma-subscript]
+   29 |   (BEGIN_STACK (S)[KISSAT_assert ((N) < SIZE_STACK (S)), (N)])
+      |                                                        ^
+/home/mysha/OpenROAD-flow-scripts/tools/yosys/abc/src/sat/kissat/inline.h:203:14: note: in expansion of macro ‘PEEK_STACK’
+  203 |   int elit = PEEK_STACK (solver->export_, iidx);
+      |              ^~~~~~~~~~
+/home/mysha/OpenROAD-flow-scripts/tools/yosys/abc/src/sat/kissat/inline.h: In function ‘unsigned int abc::kissat_map_literal(kissat*, unsigned int, bool)’:
+/home/mysha/OpenROAD-flow-scripts/tools/yosys/abc/src/sat/kissat/stack.h:29:56: warning: top-level comma expression in array subscript is deprecated [-Wcomma-subscript]
+   29 |   (BEGIN_STACK (S)[KISSAT_assert ((N) < SIZE_STACK (S)), (N)])
+      |                                                        ^
+/home/mysha/OpenROAD-flow-scripts/tools/yosys/abc/src/sat/kissat/inline.h:220:33: note: in expansion of macro ‘PEEK_STACK’
+  220 |   const import *const import = &PEEK_STACK (solver->import, eidx);
+      |                                 ^~~~~~~~~~
+In file included from /home/mysha/OpenROAD-flow-scripts/tools/yosys/abc/src/sat/kissat/phases.h:4,
+                 from /home/mysha/OpenROAD-flow-scripts/tools/yosys/abc/src/sat/kissat/internal.h:22:
+/home/mysha/OpenROAD-flow-scripts/tools/yosys/abc/src/sat/kissat/weaken.c: In function ‘void abc::push_clause_literal(kissat*, unsigned int)’:
+/home/mysha/OpenROAD-flow-scripts/tools/yosys/abc/src/sat/kissat/value.h:10:64: warning: top-level comma expression in array subscript is deprecated [-Wcomma-subscript]
+   10 | #define VALUE(LIT) (solver->values[KISSAT_assert ((LIT) < LITS), (LIT)])
+      |                                                                ^
+/home/mysha/OpenROAD-flow-scripts/tools/yosys/abc/src/sat/kissat/weaken.c:16:23: note: in expansion of macro ‘VALUE’
+   16 |   const value value = VALUE (ilit);
+      |                       ^~~~~
+[ 39%] Building CXX object CMakeFiles/libyosys-abc.dir/abc/src/sat/cadical/cadicalSolver.c.o
+[ 39%] Building CXX object CMakeFiles/libyosys-abc.dir/abc/src/sat/cadical/cadicalTest.c.o
+[ 39%] Building CXX object CMakeFiles/libyosys-abc.dir/abc/src/sat/cadical/cadical_analyze.cpp.o
+[ 39%] Building CXX object CMakeFiles/libyosys-abc.dir/abc/src/sat/cadical/cadical_arena.cpp.o
+[ 39%] Building CXX object CMakeFiles/libyosys-abc.dir/abc/src/sat/cadical/cadical_assume.cpp.o
+[ 39%] Building CXX object CMakeFiles/libyosys-abc.dir/abc/src/sat/cadical/cadical_averages.cpp.o
+[ 39%] Building CXX object CMakeFiles/libyosys-abc.dir/abc/src/sat/cadical/cadical_backbone.cpp.o
+[ 39%] Building CXX object CMakeFiles/libyosys-abc.dir/abc/src/sat/cadical/cadical_backtrack.cpp.o
+[ 39%] Building CXX object CMakeFiles/libyosys-abc.dir/abc/src/sat/cadical/cadical_backward.cpp.o
+[ 39%] Building CXX object CMakeFiles/libyosys-abc.dir/abc/src/sat/cadical/cadical_bins.cpp.o
+[ 39%] Building CXX object CMakeFiles/libyosys-abc.dir/abc/src/sat/cadical/cadical_block.cpp.o
+[ 39%] Building CXX object CMakeFiles/libyosys-abc.dir/abc/src/sat/cadical/cadical_ccadical.cpp.o
+[ 39%] Building CXX object CMakeFiles/libyosys-abc.dir/abc/src/sat/cadical/cadical_checker.cpp.o
+[ 39%] Building CXX object CMakeFiles/libyosys-abc.dir/abc/src/sat/cadical/cadical_clause.cpp.o
+[ 39%] Building CXX object CMakeFiles/libyosys-abc.dir/abc/src/sat/cadical/cadical_collect.cpp.o
+[ 39%] Building CXX object CMakeFiles/libyosys-abc.dir/abc/src/sat/cadical/cadical_compact.cpp.o
+[ 39%] Building CXX object CMakeFiles/libyosys-abc.dir/abc/src/sat/cadical/cadical_condition.cpp.o
+[ 39%] Building CXX object CMakeFiles/libyosys-abc.dir/abc/src/sat/cadical/cadical_config.cpp.o
+[ 40%] Building CXX object CMakeFiles/libyosys-abc.dir/abc/src/sat/cadical/cadical_congruence.cpp.o
+[ 40%] Building CXX object CMakeFiles/libyosys-abc.dir/abc/src/sat/cadical/cadical_constrain.cpp.o
+[ 40%] Building CXX object CMakeFiles/libyosys-abc.dir/abc/src/sat/cadical/cadical_contract.cpp.o
+[ 40%] Building CXX object CMakeFiles/libyosys-abc.dir/abc/src/sat/cadical/cadical_cover.cpp.o
+[ 40%] Building CXX object CMakeFiles/libyosys-abc.dir/abc/src/sat/cadical/cadical_decide.cpp.o
+[ 40%] Building CXX object CMakeFiles/libyosys-abc.dir/abc/src/sat/cadical/cadical_decompose.cpp.o
+[ 40%] Building CXX object CMakeFiles/libyosys-abc.dir/abc/src/sat/cadical/cadical_deduplicate.cpp.o
+[ 40%] Building CXX object CMakeFiles/libyosys-abc.dir/abc/src/sat/cadical/cadical_definition.cpp.o
+[ 40%] Building CXX object CMakeFiles/libyosys-abc.dir/abc/src/sat/cadical/cadical_drattracer.cpp.o
+[ 40%] Building CXX object CMakeFiles/libyosys-abc.dir/abc/src/sat/cadical/cadical_elim.cpp.o
+[ 40%] Building CXX object CMakeFiles/libyosys-abc.dir/abc/src/sat/cadical/cadical_elimfast.cpp.o
+[ 40%] Building CXX object CMakeFiles/libyosys-abc.dir/abc/src/sat/cadical/cadical_ema.cpp.o
+[ 40%] Building CXX object CMakeFiles/libyosys-abc.dir/abc/src/sat/cadical/cadical_extend.cpp.o
+[ 40%] Building CXX object CMakeFiles/libyosys-abc.dir/abc/src/sat/cadical/cadical_external.cpp.o
+[ 40%] Building CXX object CMakeFiles/libyosys-abc.dir/abc/src/sat/cadical/cadical_external_propagate.cpp.o
+[ 40%] Building CXX object libs/slang/source/CMakeFiles/slang_slang.dir/text/CharInfo.cpp.o
+[ 40%] Building CXX object CMakeFiles/libyosys-abc.dir/abc/src/sat/cadical/cadical_factor.cpp.o
+[ 40%] Building CXX object libs/slang/source/CMakeFiles/slang_slang.dir/text/Glob.cpp.o
+[ 40%] Building CXX object CMakeFiles/libyosys-abc.dir/abc/src/sat/cadical/cadical_file.cpp.o
+[ 40%] Building CXX object libs/slang/source/CMakeFiles/slang_slang.dir/text/Json.cpp.o
+[ 40%] Building CXX object CMakeFiles/libyosys-abc.dir/abc/src/sat/cadical/cadical_flags.cpp.o
+[ 40%] Building CXX object libs/slang/source/CMakeFiles/slang_slang.dir/text/SourceLocation.cpp.o
+[ 40%] Building CXX object CMakeFiles/libyosys-abc.dir/abc/src/sat/cadical/cadical_flip.cpp.o
+[ 40%] Building CXX object libs/slang/source/CMakeFiles/slang_slang.dir/text/SourceManager.cpp.o
+[ 40%] Building CXX object CMakeFiles/libyosys-abc.dir/abc/src/sat/cadical/cadical_format.cpp.o
+[ 40%] Building CXX object CMakeFiles/libyosys-abc.dir/abc/src/sat/cadical/cadical_frattracer.cpp.o
+[ 40%] Building CXX object CMakeFiles/libyosys-abc.dir/abc/src/sat/cadical/cadical_gates.cpp.o
+[ 41%] Building CXX object CMakeFiles/libyosys-abc.dir/abc/src/sat/cadical/cadical_idruptracer.cpp.o
+[ 41%] Building CXX object libs/slang/source/CMakeFiles/slang_slang.dir/util/BumpAllocator.cpp.o
+[ 41%] Building CXX object libs/slang/source/CMakeFiles/slang_slang.dir/util/CommandLine.cpp.o
+[ 41%] Building CXX object CMakeFiles/libyosys-abc.dir/abc/src/sat/cadical/cadical_instantiate.cpp.o
+[ 41%] Building CXX object CMakeFiles/libyosys-abc.dir/abc/src/sat/cadical/cadical_internal.cpp.o
+[ 41%] Building CXX object CMakeFiles/libyosys-abc.dir/abc/src/sat/cadical/cadical_ipasir.cpp.o
+[ 41%] Building CXX object CMakeFiles/libyosys-abc.dir/abc/src/sat/cadical/cadical_lidruptracer.cpp.o
+[ 41%] Building CXX object libs/slang/source/CMakeFiles/slang_slang.dir/util/Fmt.cpp.o
+[ 41%] Building CXX object CMakeFiles/libyosys-abc.dir/abc/src/sat/cadical/cadical_limit.cpp.o
+[ 41%] Building CXX object CMakeFiles/libyosys-abc.dir/abc/src/sat/cadical/cadical_logging.cpp.o
+[ 41%] Building CXX object CMakeFiles/libyosys-abc.dir/abc/src/sat/cadical/cadical_lookahead.cpp.o
+[ 41%] Building CXX object libs/slang/source/CMakeFiles/slang_slang.dir/util/IntervalMap.cpp.o
+[ 41%] Building CXX object CMakeFiles/libyosys-abc.dir/abc/src/sat/cadical/cadical_lratchecker.cpp.o
+[ 41%] Building CXX object libs/slang/source/CMakeFiles/slang_slang.dir/util/OS.cpp.o
+[ 41%] Building CXX object CMakeFiles/libyosys-abc.dir/abc/src/sat/cadical/cadical_lrattracer.cpp.o
+[ 41%] Building CXX object libs/slang/source/CMakeFiles/slang_slang.dir/util/SmallVector.cpp.o
+[ 42%] Building CXX object libs/slang/source/CMakeFiles/slang_slang.dir/util/String.cpp.o
+[ 42%] Building CXX object CMakeFiles/libyosys-abc.dir/abc/src/sat/cadical/cadical_lucky.cpp.o
+[ 42%] Building CXX object libs/slang/source/CMakeFiles/slang_slang.dir/util/ThreadPool.cpp.o
+[ 42%] Building CXX object CMakeFiles/libyosys-abc.dir/abc/src/sat/cadical/cadical_message.cpp.o
+[ 42%] Building CXX object CMakeFiles/libyosys-abc.dir/abc/src/sat/cadical/cadical_minimize.cpp.o
+[ 42%] Building CXX object libs/slang/source/CMakeFiles/slang_slang.dir/util/TimeTrace.cpp.o
+[ 42%] Building CXX object CMakeFiles/libyosys-abc.dir/abc/src/sat/cadical/cadical_occs.cpp.o
+[ 42%] Building CXX object libs/slang/source/CMakeFiles/slang_slang.dir/util/Util.cpp.o
+[ 42%] Building CXX object CMakeFiles/libyosys-abc.dir/abc/src/sat/cadical/cadical_options.cpp.o
+[ 42%] Building CXX object libs/slang/source/CMakeFiles/slang_slang.dir/ast/builtins/ArrayMethods.cpp.o
+[ 42%] Building CXX object CMakeFiles/libyosys-abc.dir/abc/src/sat/cadical/cadical_parse.cpp.o
+[ 42%] Building CXX object CMakeFiles/libyosys-abc.dir/abc/src/sat/cadical/cadical_phases.cpp.o
+[ 42%] Building CXX object CMakeFiles/libyosys-abc.dir/abc/src/sat/cadical/cadical_probe.cpp.o
+[ 42%] Building CXX object CMakeFiles/libyosys-abc.dir/abc/src/sat/cadical/cadical_profile.cpp.o
+[ 42%] Building CXX object CMakeFiles/libyosys-abc.dir/abc/src/sat/cadical/cadical_proof.cpp.o
+[ 42%] Building CXX object libs/slang/source/CMakeFiles/slang_slang.dir/ast/builtins/ConversionFuncs.cpp.o
+[ 42%] Building CXX object CMakeFiles/libyosys-abc.dir/abc/src/sat/cadical/cadical_propagate.cpp.o
+[ 42%] Building CXX object CMakeFiles/libyosys-abc.dir/abc/src/sat/cadical/cadical_queue.cpp.o
+[ 42%] Building CXX object CMakeFiles/libyosys-abc.dir/abc/src/sat/cadical/cadical_random.cpp.o
+[ 43%] Building CXX object CMakeFiles/libyosys-abc.dir/abc/src/sat/cadical/cadical_reap.cpp.o
+[ 43%] Building CXX object CMakeFiles/libyosys-abc.dir/abc/src/sat/cadical/cadical_reduce.cpp.o
+[ 43%] Building CXX object libs/slang/source/CMakeFiles/slang_slang.dir/ast/builtins/CoverageFuncs.cpp.o
+[ 43%] Building CXX object CMakeFiles/libyosys-abc.dir/abc/src/sat/cadical/cadical_rephase.cpp.o
+[ 43%] Building CXX object CMakeFiles/libyosys-abc.dir/abc/src/sat/cadical/cadical_report.cpp.o
+[ 43%] Building CXX object CMakeFiles/libyosys-abc.dir/abc/src/sat/cadical/cadical_resources.cpp.o
+[ 43%] Building CXX object libs/slang/source/CMakeFiles/slang_slang.dir/ast/builtins/EnumMethods.cpp.o
+[ 43%] Building CXX object CMakeFiles/libyosys-abc.dir/abc/src/sat/cadical/cadical_restart.cpp.o
+[ 43%] Building CXX object CMakeFiles/libyosys-abc.dir/abc/src/sat/cadical/cadical_restore.cpp.o
+[ 43%] Building CXX object CMakeFiles/libyosys-abc.dir/abc/src/sat/cadical/cadical_score.cpp.o
+[ 43%] Building CXX object libs/slang/source/CMakeFiles/slang_slang.dir/ast/builtins/GateTypes.cpp.o
+[ 43%] Building CXX object CMakeFiles/libyosys-abc.dir/abc/src/sat/cadical/cadical_shrink.cpp.o
+[ 43%] Building CXX object CMakeFiles/libyosys-abc.dir/abc/src/sat/cadical/cadical_signal.cpp.o
+[ 43%] Building CXX object CMakeFiles/libyosys-abc.dir/abc/src/sat/cadical/cadical_solution.cpp.o
+[ 43%] Building CXX object CMakeFiles/libyosys-abc.dir/abc/src/sat/cadical/cadical_solver.cpp.o
+[ 43%] Building CXX object libs/slang/source/CMakeFiles/slang_slang.dir/ast/builtins/MathFuncs.cpp.o
+[ 43%] Building CXX object CMakeFiles/libyosys-abc.dir/abc/src/sat/cadical/cadical_stable.cpp.o
+[ 43%] Building CXX object CMakeFiles/libyosys-abc.dir/abc/src/sat/cadical/cadical_stats.cpp.o
+[ 43%] Building CXX object CMakeFiles/libyosys-abc.dir/abc/src/sat/cadical/cadical_subsume.cpp.o
+[ 43%] Building CXX object CMakeFiles/libyosys-abc.dir/abc/src/sat/cadical/cadical_sweep.cpp.o
+[ 43%] Building CXX object libs/slang/source/CMakeFiles/slang_slang.dir/ast/builtins/MiscSystemFuncs.cpp.o
+[ 43%] Building CXX object CMakeFiles/libyosys-abc.dir/abc/src/sat/cadical/cadical_terminal.cpp.o
+[ 43%] Building CXX object CMakeFiles/libyosys-abc.dir/abc/src/sat/cadical/cadical_ternary.cpp.o
+[ 43%] Building CXX object CMakeFiles/libyosys-abc.dir/abc/src/sat/cadical/cadical_tier.cpp.o
+[ 43%] Building CXX object libs/slang/source/CMakeFiles/slang_slang.dir/ast/builtins/NonConstFuncs.cpp.o
+[ 43%] Building CXX object CMakeFiles/libyosys-abc.dir/abc/src/sat/cadical/cadical_transred.cpp.o
+[ 43%] Building CXX object CMakeFiles/libyosys-abc.dir/abc/src/sat/cadical/cadical_unstable.cpp.o
+[ 43%] Building CXX object CMakeFiles/libyosys-abc.dir/abc/src/sat/cadical/cadical_util.cpp.o
+[ 44%] Building CXX object CMakeFiles/libyosys-abc.dir/abc/src/sat/cadical/cadical_var.cpp.o
+[ 44%] Building CXX object CMakeFiles/libyosys-abc.dir/abc/src/sat/cadical/cadical_veripbtracer.cpp.o
+[ 44%] Building CXX object libs/slang/source/CMakeFiles/slang_slang.dir/ast/builtins/QueryFuncs.cpp.o
+[ 44%] Building CXX object CMakeFiles/libyosys-abc.dir/abc/src/sat/cadical/cadical_version.cpp.o
+[ 44%] Building CXX object CMakeFiles/libyosys-abc.dir/abc/src/sat/cadical/cadical_vivify.cpp.o

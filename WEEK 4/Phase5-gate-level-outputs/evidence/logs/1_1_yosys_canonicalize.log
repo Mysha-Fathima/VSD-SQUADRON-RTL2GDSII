@@ -1,0 +1,24 @@
+Yosys 0.71+59 (git sha1 d9358f38c, Release, Clang /usr/bin/clang++ 21.1.8)
+Using ABC speed script.
+1. Executing Liberty frontend: /home/mysha/OpenROAD-flow-scripts/flow/platforms/sky130hd/lib/sky130_fd_sc_hd__tt_025C_1v80.lib
+2. Executing Liberty frontend: /home/mysha/OpenROAD-flow-scripts/flow/platforms/sky130hd/lib/sky130_fd_sc_hd__tt_025C_1v80.lib
+3. Executing Verilog-2005 frontend: /home/mysha/OpenROAD-flow-scripts/flow/designs/src/user_project_wrapper/__user_project_wrapper.v
+4. Executing Verilog-2005 frontend: /home/mysha/OpenROAD-flow-scripts/flow/designs/src/user_project_wrapper/debug_regs.v
+5. Executing Verilog-2005 frontend: /home/mysha/OpenROAD-flow-scripts/flow/platforms/sky130hd/cells_clkgate_hd.v
+6. Executing HIERARCHY pass (managing design hierarchy).
+7. Executing AST frontend in derive mode using pre-parsed AST for module `\user_project_wrapper'.
+7.1. Analyzing design hierarchy..
+7.2. Executing AST frontend in derive mode using pre-parsed AST for module `\debug_regs'.
+7.3. Analyzing design hierarchy..
+7.4. Analyzing design hierarchy..
+8. Executing OPT_CLEAN pass (remove unused cells and wires).
+Warning: Ignoring module debug_regs because it contains processes (run 'proc' command first).
+9. Executing RTLIL backend.
+Warnings: 1 unique messages, 1 total
+End of script. Logfile hash: c9a0e8c6f5, time: 0.46s, user: 0.22s, system: 0.04s, MEM: 27.64 MB peak
+Yosys 0.71+59 (git sha1 d9358f38c, Release, Clang /usr/bin/clang++ 21.1.8)
+Time spent: 62% 4x read_liberty (0 sec), 22% 2x write_rtlil (0 sec), ...
+Elapsed time: 0:00.48[h:]min:sec. CPU time: user 0.44 sys 0.04 (100%). Peak memory: 28300KB.
+Log                    Ext     Elapsed      CPU     CPU/ Peak Mem sha1sum
+                                     s        s  Elapsed       MB [0:10)
+1_1_yosys_canonicalize .rtlil        0        0     1.00       27 cee3ee6921

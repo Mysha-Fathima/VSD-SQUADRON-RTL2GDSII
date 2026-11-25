@@ -1,0 +1,8 @@
+OpenROAD 26Q4-2390-g1df36bc6d5 
+Features included (+) or not (-): -GPU +GUI
+This program is licensed under the BSD-3 license. See the LICENSE file for details.
+Components of this program may be licensed under more restrictive licenses which must be honored.
+[INFO ORD-0030] Using 4 thread(s).
+write_liberty_binary /home/mysha/OpenROAD-flow-scripts/flow/platforms/sky130hd/lib/sky130_fd_sc_hd__tt_025C_1v80.lib ./objects/binary_libs/sky130hd/sky130_fd_sc_hd__tt_025C_1v80@12800135-1795166754-e465921f.blib.tmp.DESKTOP-GG8SB5C.localdomain.52939
+Binary liberty files: 1 written, 0 already cached
+Elapsed time: 0:01.41[h:]min:sec. CPU time: user 0.63 sys 0.42 (74%). Peak memory: 82320KB.

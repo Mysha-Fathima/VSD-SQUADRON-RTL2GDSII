@@ -1,0 +1,21 @@
+OpenROAD 26Q4-2390-g1df36bc6d5 
+Features included (+) or not (-): -GPU +GUI
+This program is licensed under the BSD-3 license. See the LICENSE file for details.
+Components of this program may be licensed under more restrictive licenses which must be honored.
+[INFO ORD-0030] Using 4 thread(s).
+read_liberty ./objects/binary_libs/sky130hd/sky130_fd_sc_hd__tt_025C_1v80@12800135-1795166754-e465921f.blib
+[INFO ODB-0227] LEF file: /home/mysha/OpenROAD-flow-scripts/flow/platforms/sky130hd/lef/sky130_fd_sc_hd.tlef, created 13 layers, 25 vias
+[INFO ODB-0227] LEF file: /home/mysha/OpenROAD-flow-scripts/flow/platforms/sky130hd/lef/sky130_fd_sc_hd_merged.lef, created 441 library cells
+link_design user_project_wrapper
+read_sdc ./results/sky130hd/user_project_wrapper/base/1_2_yosys.sdc
+source /home/mysha/OpenROAD-flow-scripts/flow/platforms/sky130hd/setRC.tcl
+eliminate_dead_logic
+Removed 0 unused instances and 0 unused nets.
+Design area 5901 um^2 100% utilization.
+write_sdc -no_timestamp ./results/sky130hd/user_project_wrapper/base/1_synth.sdc
+write_db ./results/sky130hd/user_project_wrapper/base/1_synth.odb
+Elapsed time: 0:00.66[h:]min:sec. CPU time: user 0.60 sys 0.09 (103%). Peak memory: 108896KB.
+Log                    Ext     Elapsed      CPU     CPU/ Peak Mem sha1sum
+                                     s        s  Elapsed       MB [0:10)
+1_synth                .odb          0        1     1.05      106 96d81b7313
+1_synth                .sdc                                       c64b0e57d1

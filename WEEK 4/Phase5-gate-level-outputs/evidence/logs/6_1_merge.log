@@ -1,0 +1,5 @@
+[INFO] Reporting cells prior to loading DEF ...
+	/home/mysha/OpenROAD-flow-scripts/flow/platforms/sky130hd/gds/sky130_fd_sc_hd.gds
+[INFO] All LEF cells have matching GDS/OAS cells
+[INFO] No orphan cells in the final layout
+Elapsed time: 0:25.26[h:]min:sec. CPU time: user 18.51 sys 7.43 (102%). Peak memory: 1137740KB.
